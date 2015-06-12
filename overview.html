@@ -1,0 +1,3006 @@
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from localhost/overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2015 17:32:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Projects &mdash; TeamCity</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    
+<link rel="Shortcut Icon" href="favicond387.ico?v8" type="image/x-icon"/>
+
+<meta name="format-detection" content="telephone=no"/>
+
+<meta name="application-name" content="TeamCity (Projects &amp;mdash; TeamCity)"/>
+<meta name="description" content="Powerful Continuous Integration and Build Server"/>
+<meta name="viewport" content="width=1000">
+<link rel="icon" href="img/icons/TeamCity512d387.png?v8" sizes="512x512"/>
+<link rel="icon" href="img/icons/TeamCity128d387.png?v8" sizes="128x128"/>
+<link rel="icon" href="img/icons/TeamCity48d387.png?v8" sizes="48x48"/>
+<link rel="icon" href="img/icons/TeamCity32d387.png?v8" sizes="32x32"/>
+
+<link rel="icon" href="img/icons/TeamCity16d387.png?v8" sizes="16x16"/>
+
+    <!-- :linkCSS --><style type="text/css">
+  @import "res/-36551969708621551815a07.css?v=1434034307663";
+</style>
+
+
+    <!--[if IE 7]>
+    <style type="text/css">
+      @import /css/ie7.css;
+      @import /css/FontAwesome/css/font-awesome-ie7.min.css;
+    </style>
+<![endif]-->
+
+
+    <script type="text/javascript">
+  (function() {
+    var classNames = [];
+
+    /*@cc_on
+      classNames.push('ua-ie');
+      @if (@_jscript_version < 9) classNames.push('ua-ie8-below') @end
+    @*/
+
+    var ua = window.navigator.userAgent.toLowerCase();
+
+    if (ua.indexOf('mac') > -1) {
+      classNames.push('ua-mac');
+    } else if (ua.indexOf('windows') !== -1 && ua.indexOf('chrome') !== -1) {
+      classNames.push('ua-win-chrome');
+    }
+
+    document.documentElement.className = classNames.join(' ');
+  })();
+</script>
+    <script type="text/javascript">
+  var base_uri=window.location.protocol+"//"+window.location.host+"";
+</script>
+
+    
+
+    
+<!-- :linkCSS --><style type="text/css">
+  @import "res/23197217611532022425a07.css?v=1434034307663";
+</style>
+
+
+<!-- :linkScript --><script type="text/javascript" src="res/13186001004947130465a07.js?v=1434034307663"></script>
+
+
+<script type="text/javascript">
+  window.$j = jQuery.noConflict();
+</script>
+
+<!-- :linkScript --><script type="text/javascript" src="res/18560784067845212605a07.js?v=1434034307663"></script>
+
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/-47352584472883172375a07.js?v=1434034307663"></script>
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/-34740881818844512385a07.js?v=1434034307663"></script>
+
+
+    
+<script type="text/javascript">
+  var internalProps = [];
+
+  internalProps['teamcity.ui.pollInterval'] = 6;
+  internalProps['teamcity.ui.serverAvailability.pollInterval'] = 3;
+
+  internalProps['teamcity.ui.events.pollInterval'] = 6;
+  internalProps['teamcity.ui.systemProblems.pollInterval'] = 20;
+  internalProps['teamcity.ui.problemsSummary.pollInterval'] = 8;
+  internalProps['teamcity.ui.buildQueueEstimates.pollInterval'] = 10;
+
+  // Doesn't use BS.SubscriptionManager and standard subscription mechanism
+  internalProps['teamcity.ui.cleanupNotificatorProgress.pollInterval'] = 6;
+</script>
+
+
+    <!-- :linkScript --><script type="text/javascript" src="res/-42700968017468149075a07.js?v=1434034307663"></script>
+
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/20839995119179176525a07.js?v=1434034307663"></script>
+
+
+    
+
+<!-- :linkCSS --><style type="text/css">
+  @import "res/72849222456098178075a07.css?v=1434034307663";
+</style>
+
+<!-- :linkScript --><script type="text/javascript" src="res/-32884429132992613285a07.js?v=1434034307663"></script>
+
+
+    <script type="text/javascript">
+      BS.Socket.init(true);
+      BS.ServerLink.init('32334');
+
+      
+      BS.topNavPane = new TabbedPane('top');
+
+      BS.topNavPane.addTab("overview", {
+        caption: "Projects",
+        url: "/overview.html"
+      });
+
+      BS.topNavPane.addTab("changes", {
+        caption: "Changes",
+        url: "/changes.html"
+      });
+
+      BS.topNavPane.addTab("agents", {
+        caption: "Agents (2)",
+        url: "/agents.html"
+      });
+
+      
+      BS.topNavPane.addTab("queue", {
+        caption: "Build Queue (0)",
+        url: "/queue.html"
+      });
+      
+
+      (function() {
+        function initPage() {
+        
+          if (document.location.href.indexOf('#') == -1) {
+            restoreScrolling();
+          }
+        
+
+          if (typeof BS == "undefined") return;
+          BS.initReloadBlocker();
+        }
+
+        $j(document).ready(initPage);
+      })();
+
+      $j(document).ready(function() {
+        if (typeof BS == "undefined") return;
+        BS.StatisticsMonitor.start();
+        BS.InvestigationsCounterMonitor.start(-1000);
+        BS.EventTracker.startTracking("eventTracker.html");
+        BS.SubscriptionManager.checkNow();
+      });
+
+      Event.observe(window, "unload", function() {
+        rememberScrolling();
+        if (typeof BS == "undefined") return;
+        BS.blockRefreshPermanently();
+        BS.SubscriptionManager.dispose();
+      });
+    </script>
+  
+    
+    
+      <style type="text/css">
+        #mainNavigation {
+          display: none;
+        }
+      </style>
+
+      <script type="text/javascript">
+        BS.AllProjectsPopup.isOverviewPage = true;
+      </script>
+    
+  
+  <!-- :linkCSS --><style type="text/css">
+  @import "res/14953619733047156965a07.css?v=1434034307663";
+</style>
+
+  <!-- :linkScript --><script type="text/javascript" src="res/-89503208163039163695a07.js?v=1434034307663"></script>
+
+  <script type="text/javascript">
+    $j(document).ready(function() {
+      BS.SystemProblems.setOptions({overview: true});
+      BS.SystemProblems.startUpdates();
+    });
+
+    BS.topNavPane.setActiveCaption('overview');
+  </script>
+
+  
+  <!-- START EXTENSION CSS jetbrains.buildServer.serverSide.search.SearchController$1 name:searchBuildByNumber -->
+  <!-- :linkCSS --><style type="text/css">
+  @import "res/-39441135864799719265a07.css?v=1434034307663";
+</style>
+
+  <!-- END EXTENSION CSS jetbrains.buildServer.serverSide.search.SearchController$1 -->
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$1: name:searchBuildByNumber: /plugins/searchBuildByNumber/empty.jsp -->
+    
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$1 -->
+  
+  </head>
+
+  <body class="pageBG">
+
+  <div id="bodyWrapper">
+    <div class="ring-header"></div> <!-- Ring placeholder, do not remove -->
+    
+      <div id="loadingWarning">
+        LOADING...
+      </div>
+
+      <script type="text/javascript">
+        (function() {
+          function getLoadingDiv() {
+            return document.getElementById('loadingWarning');
+          }
+          var loadingTimeout = setTimeout(function(){
+            var div = getLoadingDiv();
+            if (div != null) {
+              div.style.display = 'block';
+            }
+          }, 500);
+
+          $j(document).ready(function() {
+            if (loadingTimeout) clearTimeout(loadingTimeout);
+            var div = getLoadingDiv();
+            if (div != null) {
+              BS.Util.hide(div);
+            }
+          });
+        })();
+      </script>
+    
+
+    <div id="topWrapper">
+      <div class="headBG clearfix">
+        <div class="fixedWidth">
+
+          
+          <a href="index.html" class="headerLogo"><i class="headerLogoImg" ></i></a>
+
+          <div id="tabsContainer"></div>
+          <div id="userPanel">
+            
+            <div class="info"><p><span class="investigationsTicker"></span>
+              
+              <span class="pc " id="sp_span_usernamePopup"><span class="pc__label">Guest user</span><span class="pc__toggle-wrapper">&nbsp;<span id="usernamePopup" class="toggle"></span></span></span><div id="sp_span_usernamePopupContent" class="popupDiv "><ul class="menuList"><li><a class="logout" href="#" onclick="BS.Logout('ajaxbfd1.html?logout=1'); return false" showdiscardchangesmessage="false">Log out</a></li></ul></div><script>BS.install_simple_popup('sp_span_usernamePopup', {shift: {x: -120, y: 15}, className: 'quickLinksMenuPopup'});</script>
+</div>
+            
+            
+          </div>
+        </div>
+        <div id="header-ready"></div>
+      </div>
+      <script type="text/javascript">
+        if (BS.topNavPane) {
+          BS.topNavPane.showIn('tabsContainer');
+          jQuery("#tabsContainer li").each(function() {
+            var self = jQuery(this);
+            if (!self.hasClass("first")) {
+              self.addClass("leftBorder")
+            }
+          });
+          BS.AllProjectsPopup.install();
+        }
+      </script>
+
+      <div class="fixedWidth clearfix">
+        <div class="quickLinks">
+          
+        </div>
+
+        
+    
+      <div id="toolbar" class="clearfix">
+        <div class="toolbar-right">
+          
+
+  
+  <i id="overview.hideSuccessful_progress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+
+
+
+
+
+
+  
+  
+    <input type="checkbox" 
+           name="overview.hideSuccessful"
+           id="overview.hideSuccessful"
+           
+           
+           onclick="BS.User.setBooleanProperty('overview.hideSuccessful', this.checked, {afterComplete: function() {BS.reload(true);}, progress:'overview.hideSuccessful_progress'})"
+           
+           
+           
+           
+           
+           value="true">
+    <input type="hidden" name="_overview.hideSuccessful" value="">
+  
+
+ <label class="rightLabel" for="overview.hideSuccessful">Hide Successful Configurations</label>
+
+          
+        </div>
+        <div class="toolbar-left">
+          
+
+
+
+
+  
+  
+    <a class="btn btn_mini btn_icon" href="#" title="Collapse All" onclick="BS.CollapsableBlocks.collapseAll(true); return false" style="margin-right: 4px;"><img class="btn_icon_inner" src="img/collapse.png" alt="" width="16" height="16"/></a>
+    <a class="btn btn_mini btn_icon" href="#" title="Expand All" onclick="BS.CollapsableBlocks.expandAll(true); return false"><img class="btn_icon_inner" src="img/expand.png" alt="" width="16" height="16"/></a>
+  
+
+
+        </div>
+          
+        
+      </div>
+    
+    
+  
+        <ul id="mainNavigation"><li></li></ul>
+
+        <script type="text/javascript">
+            BS.Navigation.writeBreadcrumbs();
+        </script>
+      </div>
+    </div>
+
+    <div class="fixedWidth">
+      
+<a name="internalProjectIdUsedMessageKey"></a>
+<div class="messageNote" style='display: none; ' id="message_internalProjectIdUsedMessageKey">
+</div>
+
+      
+<a name="buildTypeExternalIdChanged"></a>
+<div class="messageNote" style='display: none; ' id="message_buildTypeExternalIdChanged">
+</div>
+
+
+      
+
+
+<!-- include PlaceId.BEFORE_CONTENT -->
+
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.controllers.CriticalErrorsPageExtension: name:__tc_criticalErrors: /pageBeforeContentCriticalErrors.jsp -->
+    
+
+
+
+
+
+
+<div id="globalHealthItems" class="refreshable">
+  <!--##BEGIN:globalHealthItemsInner##--><div id="globalHealthItemsInner" class="refreshableInner">
+  
+</div><!--##END:globalHealthItemsInner##-->
+</div>
+
+  
+  
+    <script type="text/javascript">
+      $('globalHealthItems').refresh = BS.Refreshable.createRefreshFunction('globalHealthItems', 'overview.html', '');
+    </script>
+  
+
+
+
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.controllers.CriticalErrorsPageExtension -->
+  
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$2: name:searchBuildByNumber: /plugins/searchBuildByNumber/input.jsp -->
+    
+
+<div id="inputIdF" style="display: none;" data-btId="">
+  <input class="quickSearchQuery"
+       id="searchField"
+       value=""
+       type="text"
+       autocomplete="off"
+       />
+<a href="#" onclick="BS.Search.go(false);" class="quickSearchButton" title="Search"><i class="icon-search"></i></a>
+
+</div>
+
+<!-- :linkScript --><script type="text/javascript" src="res/14411460271034815295a07.js?v=1434034307663"></script>
+
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$2 -->
+  
+<!-- end of include PlaceId.BEFORE_CONTENT -->
+
+
+      
+      <table class="tabsTable">
+        <tr>
+          <td>
+            <div id="tabsContainer3" class="simpleTabs"></div>
+          </td>
+          <td class="besideContent">
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="archivedProjectsContent" class="popupDiv" style="display:none;">
+    </div>
+
+    
+<div id="buildResultsSummaryTemplate" style="display:none">
+  <div class="summaryContainer">
+    <span id="detailedSummary:##BUILD_ID##">
+      <table cellspacing="0">
+      <tr>
+        <td>
+          <div class="header">Build shortcuts</div>
+          <ul class="bsLinks">
+            <li>
+              <a href="http://localhost/viewLog.html?tab=buildLog&amp;buildTypeId=##BUILD_TYPE_ID##&buildId=##BUILD_ID##"
+                     title="View log messages">Build log</a>
+              <span class="separator">|</span>
+              <a href="downloadBuildLog9875.html?buildId=##BUILD_ID##&archived=true" target="_blank"
+                      title="Download archived build log">.zip</a>
+            </li>
+            <li><a href="http://localhost/viewLog.html?tab=buildParameters&amp;buildTypeId=##BUILD_TYPE_ID##&buildId=##BUILD_ID##"
+                   title="View parameters">Parameters</a></li>
+            <li><span id="summaryProgress:##BUILD_ID##" style="font-weight: normal; color:#888;"></span></li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+    </span>
+  </div>
+</div>
+<div id="issueDetailsTemplate" style="display:none">
+  <span id="detailedSummary:##ISSUE_ID##_##PROJECT_ID##">
+    <i id="inProgress" style="" class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+  </span>
+</div>
+
+
+    <div id="mainContent" class="fixedWidth clearfix">
+      <div id="content">
+        
+<a name="accessDenied"></a>
+<div class="successMessage" style='display: none; ' id="message_accessDenied">
+</div>
+
+        
+    
+      <script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnEvent('o', 5, handler);BS.EventTracker.subscribeOnEvent('p', 0, handler);BS.EventTracker.subscribeOnEvent('q', 0, handler);})();</script>
+      <script type="text/javascript">(function() {var handler = function() {BS.ProblemsSummary.requestUpdateAll();};BS.EventTracker.subscribeOnEvent('w', 0, handler);BS.EventTracker.subscribeOnEvent('I', 0, handler);})();</script>
+      <div id="buildTypes">
+  
+<a name="buildNotFound"></a>
+<div class="successMessage" style='display: none; ' id="message_buildNotFound">
+</div>
+
+<a name="buildTypeNotFound"></a>
+<div class="successMessage" style='display: block; ' id="message_buildTypeNotFound">
+Build configuration with id &#034;&#034; does not exist anymore.</div>
+<script type="text/javascript">
+  if (!window._shownMessages) {
+    window._shownMessages = {};
+  }
+  window._shownMessages['message_buildTypeNotFound'] = "info";
+</script>
+
+<a name="changeNotFound"></a>
+<div class="successMessage" style='display: none; ' id="message_changeNotFound">
+</div>
+
+<a name="projectNotFound"></a>
+<div class="successMessage" style='display: none; ' id="message_projectNotFound">
+</div>
+
+<a name="visibleProjectsSaved"></a>
+<div class="successMessage" style='display: none; ' id="message_visibleProjectsSaved">
+</div>
+<div class="clr"></div>
+
+  <div id="overviewMain" class="refreshable">
+  <!--##BEGIN:overviewMainInner##--><div id="overviewMainInner" class="refreshableInner"><div class="build overview-page" id="p_project4"
+  ><script type="text/javascript">(function() {var handler = function() {
+    BS.Projects.updateProjectView('project4', 'Dependencies', true);};BS.EventTracker.subscribeOnProjectEvent('a', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('b', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('c', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('e', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('v', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('t', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('u', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('r', 11, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('s', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('x', 11, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('m', 3, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('l', 0, 'project4', handler);})();</script>
+<script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnProjectEvent('n', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('p', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('q', 0, 'project4', handler);})();</script>
+  
+  
+  
+
+  
+  
+
+  
+  <div class="projectHeader exp" id="ph_project4">
+   <table class="projectHeaderTable">
+     <tr>
+       <td class="projectName">
+         
+         <span class="pc btPopup pc_topRightButton" id="projPopupproject4" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'projectSummary', {show:[ 'Dependencies', 1, 1]});"
+><span class="pc__label">
+           <span  title="Project is successful. Click to expand / collapse details" class="handle handle_expanded handle_overview_successful" id="blockHandleovr_project4"></span>
+           <div class="project-icon" title="Project"></div>
+
+           <a href="project29a0.html?projectId=Dependencies&amp;tab=projectOverview" title="Go to the &#34;Dependencies&#34; page">Dependencies</a>
+         </span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span>
+
+         <span class="projectDescription">A bunch of other dependecies</span>
+         
+       </td>
+       
+       <td class="projectStatus err">
+         
+         
+       </td>
+       <td class="projectStatus failing">
+         
+         
+       </td>
+       <td class="projectStatus successful">
+         
+         
+           
+           <span onmouseover='BS.Tooltip.showMessage(this, {shift:{x:10, y:18}, hideDelay: 300}, "11 successful build configurations");' onmouseout='BS.Tooltip.hidePopup()'  >11 successful</span>
+         
+       </td>
+       <td class="hideProject">
+         &nbsp;
+       </td>
+     </tr>
+   </table>
+  </div>
+
+  <div id="btbovr_project4">
+    
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt13-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt13"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewType1501.html?buildTypeId=Dependencies_AdamsLairWinFormsRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;AdamsLair.WinForms.-Release&quot; home page"
+  >AdamsLair.WinForms.-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt13" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_AdamsLairWinFormsRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7bd:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7bd:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt13', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt13', '14de31bb7bd');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt13" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10670")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #15
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10670:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10670");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10670" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10670).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10670).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog2a73.html?buildId=10670&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_AdamsLairWinFormsRelease" title="View build results" ><span id="build:10670:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10670" onmouseover="BS.BuildResultsPopupTracker(10670).showPopup('bt13', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10670:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10670" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10670Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLogbc75.html?buildId=10670&amp;tab=artifacts&amp;buildTypeId=Dependencies_AdamsLairWinFormsRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10670" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10670);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:10670">
+
+
+
+  
+  <span class="non-link-agent-name">Server</span>
+
+</p><div class="progress_holder" id="build:10670">
+<span class="date" title="11&nbsp;Feb&nbsp;15&nbsp;19:53">4 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:10670:duration">34s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt13']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt13', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt18-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt18"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewType5028.html?buildTypeId=Dependencies_AdamsLairWinFormsPopUpRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;AdamsLair.WinForms.PopUp.-Release&quot; home page"
+  >AdamsLair.WinForms.PopUp.-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt18" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_AdamsLairWinFormsPopUpRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7be:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7be:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt18', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt18', '14de31bb7be');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt18" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10672")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #7
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10672:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10672");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10672" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10672).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10672).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog41ef.html?buildId=10672&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_AdamsLairWinFormsPopUpRelease" title="View build results" ><span id="build:10672:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10672" onmouseover="BS.BuildResultsPopupTracker(10672).showPopup('bt18', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10672:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10672" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10672Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLog754c.html?buildId=10672&amp;tab=artifacts&amp;buildTypeId=Dependencies_AdamsLairWinFormsPopUpRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10672" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10672);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:10672">
+
+
+
+  
+  <span class="non-link-agent-name">Server</span>
+
+</p><div class="progress_holder" id="build:10672">
+<span class="date" title="11&nbsp;Feb&nbsp;15&nbsp;19:54">4 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:10672:duration">19s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt18']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt18', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt14-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt14"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewTypecc99.html?buildTypeId=Dependencies_AgaControlsRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;Aga.Controls-Release&quot; home page"
+  >Aga.Controls-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt14" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_AgaControlsRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7bf:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7bf:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt14', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt14', '14de31bb7bf');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt14" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10674")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #5
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10674:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10674");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10674" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10674).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10674).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog7206.html?buildId=10674&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_AgaControlsRelease" title="View build results" ><span id="build:10674:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10674" onmouseover="BS.BuildResultsPopupTracker(10674).showPopup('bt14', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10674:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10674" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10674Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLogc519.html?buildId=10674&amp;tab=artifacts&amp;buildTypeId=Dependencies_AgaControlsRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10674" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10674);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:10674">
+
+
+
+  
+  <span class="non-link-agent-name">Server</span>
+
+</p><div class="progress_holder" id="build:10674">
+<span class="date" title="11&nbsp;Feb&nbsp;15&nbsp;19:54">4 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:10674:duration">19s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt14']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt14', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt16-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt16"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewTypeefa3.html?buildTypeId=Dependencies_DockPanelSuiteRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;DockPanelSuite-Release&quot; home page"
+  >DockPanelSuite-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt16" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_DockPanelSuiteRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c0:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c0:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt16', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt16', '14de31bb7c0');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt16" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10676")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #4
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10676:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10676");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10676" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10676).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10676).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog42ec.html?buildId=10676&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_DockPanelSuiteRelease" title="View build results" ><span id="build:10676:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10676" onmouseover="BS.BuildResultsPopupTracker(10676).showPopup('bt16', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10676:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10676" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10676Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLogb28e.html?buildId=10676&amp;tab=artifacts&amp;buildTypeId=Dependencies_DockPanelSuiteRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10676" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10676);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:10676">
+
+
+
+  
+  <span class="non-link-agent-name">Server</span>
+
+</p><div class="progress_holder" id="build:10676">
+<span class="date" title="11&nbsp;Feb&nbsp;15&nbsp;19:54">4 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:10676:duration">20s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt16']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt16', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt15-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt15"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewType3f47.html?buildTypeId=Dependencies_FarseerDualityRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;FarseerDuality-Release&quot; home page"
+  >FarseerDuality-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt15" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_FarseerDualityRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c1:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c1:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt15', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt15', '14de31bb7c1');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt15" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10678")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #7
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10678:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10678");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10678" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10678).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10678).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog9f39.html?buildId=10678&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_FarseerDualityRelease" title="View build results" ><span id="build:10678:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10678" onmouseover="BS.BuildResultsPopupTracker(10678).showPopup('bt15', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10678:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10678" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10678Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLog83be.html?buildId=10678&amp;tab=artifacts&amp;buildTypeId=Dependencies_FarseerDualityRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10678" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10678);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:10678">
+
+
+
+  
+  <span class="non-link-agent-name">Server</span>
+
+</p><div class="progress_holder" id="build:10678">
+<span class="date" title="11&nbsp;Feb&nbsp;15&nbsp;19:55">4 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:10678:duration">24s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt15']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt15', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt9-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt9"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewTypeb05e.html?buildTypeId=Dependencies_FlowRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;Flow-Release&quot; home page"
+  >Flow-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt9" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_FlowRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c2:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c2:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt9', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt9', '14de31bb7c2');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt9" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("11965")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #18
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:11965:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_11965");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_11965" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">buildserver</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(11965).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(11965).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLogf1ee.html?buildId=11965&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_FlowRelease" title="View build results" ><span id="build:11965:text">Tests passed:<wbr> 18</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:11965" onmouseover="BS.BuildResultsPopupTracker(11965).showPopup('bt9', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:11965:artifactsLink"><span class="pc" id="artifacts:11965" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'artifactsPopup', {show:['bt9', 11965]});"
+><span class="pc__label"><a class="resultsLink" href="viewLog1f1b.html?buildId=11965&amp;tab=artifacts&amp;buildTypeId=Dependencies_FlowRelease" title="View build artifacts" >Artifacts</a></span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:11965" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 11965);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:11965">
+
+
+
+  
+  <span class="non-link-agent-name">buildserver</span>
+
+</p><div class="progress_holder" id="build:11965">
+<span class="date" title="07&nbsp;Apr&nbsp;15&nbsp;17:19">2 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:11965:duration">16s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt9']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt9', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt17-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt17"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewTypee7a6.html?buildTypeId=Dependencies_NVorbisRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;NVorbis-Release&quot; home page"
+  >NVorbis-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt17" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_NVorbisRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c3:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c3:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt17', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt17', '14de31bb7c3');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt17" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10717")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #10
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10717:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10717");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10717" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10717).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10717).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog4eb2.html?buildId=10717&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:10717:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10717" onmouseover="BS.BuildResultsPopupTracker(10717).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10717:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10717" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10717Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLogecb0.html?buildId=10717&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10717" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10717);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:10717">
+
+
+
+  
+  <span class="non-link-agent-name">Server</span>
+
+</p><div class="progress_holder" id="build:10717">
+<span class="date" title="11&nbsp;Feb&nbsp;15&nbsp;22:14">4 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:10717:duration">17s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt17']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt17', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt12-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt12"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewType2c9f.html?buildTypeId=Dependencies_OpenTkDualityRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;OpenTk-duality-Release&quot; home page"
+  >OpenTk-duality-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt12" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_OpenTkDualityRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c4:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c4:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt12', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt12', '14de31bb7c4');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt12" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("13386")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #42
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:13386:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_13386");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_13386" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">buildserver</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(13386).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(13386).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLogec5c.html?buildId=13386&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_OpenTkDualityRelease" title="View build results" ><span id="build:13386:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:13386" onmouseover="BS.BuildResultsPopupTracker(13386).showPopup('bt12', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:13386:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:13386" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:13386Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLogad9a.html?buildId=13386&amp;tab=artifacts&amp;buildTypeId=Dependencies_OpenTkDualityRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:13386" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 13386);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:13386">
+
+
+
+  
+  <span class="non-link-agent-name">buildserver</span>
+
+</p><div class="progress_holder" id="build:13386">
+<span class="date" title="09&nbsp;Jun&nbsp;15&nbsp;16:11">3 days ago</span> <span class="progressDuration" title="Build duration">(<span id="build:13386:duration">8s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt12']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt12', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt24-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt24"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewTypedb00.html?buildTypeId=Dependencies_OptimizePixmap"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;Post Build Helpers (optimize pixmaps and CleanResources)&quot; home page"
+  >Post Build Helpers (optimize pixmaps and CleanResources)</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt24" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_OptimizePixmap', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c5:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c5:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt24', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt24', '14de31bb7c5');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt24" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("13482")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #61
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:13482:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_13482");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_13482" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Agent2</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(13482).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(13482).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLogbd28.html?buildId=13482&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_OptimizePixmap" title="View build results" ><span id="build:13482:text">Tests passed:<wbr> 5</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:13482" onmouseover="BS.BuildResultsPopupTracker(13482).showPopup('bt24', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:13482:artifactsLink"><span class="pc" id="artifacts:13482" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'artifactsPopup', {show:['bt24', 13482]});"
+><span class="pc__label"><a class="resultsLink" href="viewLog9faf.html?buildId=13482&amp;tab=artifacts&amp;buildTypeId=Dependencies_OptimizePixmap" title="View build artifacts" >Artifacts</a></span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:13482" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 13482);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:13482">
+
+
+
+  
+  <span class="non-link-agent-name">Agent2</span>
+
+</p><div class="progress_holder" id="build:13482">
+<span class="date" title="10&nbsp;Jun&nbsp;15&nbsp;14:45">2 days ago</span> <span class="progressDuration" title="Build duration">(<span id="build:13482:duration">15s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt24']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt24', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt11-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt11"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewType1175.html?buildTypeId=Dependencies_ScriptingPluginRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;ScriptingPlugin-Release&quot; home page"
+  >ScriptingPlugin-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt11" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_ScriptingPluginRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c6:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c6:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt11', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt11', '14de31bb7c6');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt11" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("13323")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #150
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:13323:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_13323");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_13323" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">buildserver</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(13323).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(13323).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog74df.html?buildId=13323&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_ScriptingPluginRelease" title="View build results" ><span id="build:13323:text">Tests passed:<wbr> 49</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:13323" onmouseover="BS.BuildResultsPopupTracker(13323).showPopup('bt11', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:13323:artifactsLink"><span class="pc" id="artifacts:13323" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'artifactsPopup', {show:['bt11', 13323]});"
+><span class="pc__label"><a class="resultsLink" href="viewLog3a4d.html?buildId=13323&amp;tab=artifacts&amp;buildTypeId=Dependencies_ScriptingPluginRelease" title="View build artifacts" >Artifacts</a></span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLogea84.html?buildId=13323&amp;tab=buildChangesDiv&amp;buildTypeId=Dependencies_ScriptingPluginRelease" title="" id='changes:13323'>andrea (2)</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:13323" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 13323);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:13323">
+
+
+
+  
+  <span class="non-link-agent-name">buildserver</span>
+
+</p><div class="progress_holder" id="build:13323">
+<span class="date" title="08&nbsp;Jun&nbsp;15&nbsp;20:34">3 days ago</span> <span class="progressDuration" title="Build duration">(<span id="build:13323:duration">54s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt11']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt11', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+
+  
+    
+    
+    
+    
+    
+  
+  
+
+  <div class="tableCaption" id="bt8-div">
+    
+    <table class="runTable">
+      <tr>
+        
+        <td class="runningStatus">
+            <span class="runningStatus">
+              
+  <img
+  src="img/buildStates/empty.png" class="icon "  data-no-retina/>
+            </span>
+          <span class="runningStatus">Idle</span>
+        </td>
+        <td class="runButton">
+          
+        </td>
+      </tr>
+    </table>
+
+    
+    
+      <span  title="Click to collapse/expand details" class="handle handle_expanded handle_overview_successful" id="blockHandlebt8"></span>
+      
+    
+
+    <div class="buildType-icon" title="Build configuration"></div>
+
+
+    
+    
+    
+
+    <span class="pc btPopup" onmouseover="BS.BuildTypeSummary.stopHidingPopup();" onmouseout="BS.BuildTypeSummary.hidePopup();"
+><span class="pc__label"><a href="viewTypeee7e.html?buildTypeId=Dependencies_SpineRuntimeRelease"
+    class="buildTypeName "
+    style="padding-left:0px;" title="Click to open &quot;Spine-Runtime-Release&quot; home page"
+  >Spine-Runtime-Release</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="btppbt8" onmouseover="BS.BuildTypeSummary.showSummaryPopup(this, 'Dependencies_SpineRuntimeRelease', 'Dependencies', true, 0, false, false);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+
+
+    <span class="addMessage lastBuilt"></span>
+
+    <span id="buildType:14de31bb7c7:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb7c7:systemProblemsText" class="systemProblemsBarText" data-maxWidth="60">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt8', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt8', '14de31bb7c7');</script>
+
+    
+
+    
+      
+      
+    
+
+    
+  </div>
+
+  
+  <div class="overviewTypeTableContainer" id="btbbt8" style="">
+    
+      <div class="bt-separator"></div>
+
+      <table cellspacing="0" class="overviewTypeTable">
+        
+        
+          
+            <tr class="lastFinished">
+              
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10694")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #19
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10694:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10694");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10694" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10694).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10694).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog0228.html?buildId=10694&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_SpineRuntimeRelease" title="View build results" ><span id="build:10694:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10694" onmouseover="BS.BuildResultsPopupTracker(10694).showPopup('bt8', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10694:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10694" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">No artifacts</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10694Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLog5792.html?buildId=10694&amp;tab=artifacts&amp;buildTypeId=Dependencies_SpineRuntimeRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10694" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10694);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" duration"><p class="hidden" id="aLink:10694">
+
+
+
+  
+  <span class="non-link-agent-name">Server</span>
+
+</p><div class="progress_holder" id="build:10694">
+<span class="date" title="11&nbsp;Feb&nbsp;15&nbsp;20:05">4 months ago</span> <span class="progressDuration" title="Build duration">(<span id="build:10694:duration">9s</span>)</span>
+</div></td>
+  
+  <td class=" stopBuild">
+    
+  </td>
+  
+
+
+            </tr>
+          
+        
+        
+      </table>
+
+      <script type="text/javascript">
+        BS.Blocks._saved['btbt8']='';
+        
+        BS.CollapsableBlocks.registerBlock(new BS.BuildTypeBlock("bt", 'bt8', 'handle/successfulSmall.html'));
+      </script>
+    
+  </div>
+
+  </div>
+
+  <script type="text/javascript">
+      BS.Blocks._saved['t_ovr_project4']='';
+      
+      BS.CollapsableBlocks.registerBlock(new BS.ProjectBlock("t_", 'ovr_project4', 'Dependencies', "handle/successfulSmall.html", false));
+    </script>
+  <script type="text/javascript">
+  (function($) {
+    $("#btbovr_project4 > .tableCaption").first().addClass("firstRow");
+    
+  })(jQuery);
+</script>
+</div>
+<div class="build overview-page" id="p_project9"
+  ><script type="text/javascript">(function() {var handler = function() {
+    BS.Projects.updateProjectView('project9', 'DependenciesAndroid', false);};BS.EventTracker.subscribeOnProjectEvent('a', 2, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('b', 2, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('c', 2, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('e', 0, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('v', 0, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('t', 2, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('u', 2, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('r', 2, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('s', 1, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('x', 3, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('m', 4, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('l', 1, 'project9', handler);})();</script>
+<script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnProjectEvent('n', 0, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('p', 0, 'project9', handler);BS.EventTracker.subscribeOnProjectEvent('q', 0, 'project9', handler);})();</script>
+  
+  
+  
+
+  
+  
+
+  
+  <div class="projectHeader " id="ph_project9">
+   <table class="projectHeaderTable">
+     <tr>
+       <td class="projectName">
+         
+         <span class="pc btPopup pc_topRightButton" id="projPopupproject9" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'projectSummary', {show:[ 'DependenciesAndroid', 1, 1]});"
+><span class="pc__label">
+           <span  title="Project is successful. Click to expand / collapse details" class="handle handle_expanded handle_overview_successful" id="blockHandleovr_project9"></span>
+           <div class="project-icon" title="Project"></div>
+
+           <a href="project178b.html?projectId=DependenciesAndroid&amp;tab=projectOverview" title="Go to the &#34;Dependencies Android&#34; page">Dependencies Android</a>
+         </span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span>
+
+         <span class="projectDescription">Bunch of dependencies for Android</span>
+         
+       </td>
+       
+       <td class="projectStatus err">
+         
+         
+       </td>
+       <td class="projectStatus failing">
+         
+         
+       </td>
+       <td class="projectStatus successful">
+         
+         
+           
+           <span onmouseover='BS.Tooltip.showMessage(this, {shift:{x:10, y:18}, hideDelay: 300}, "1 successful build configuration");' onmouseout='BS.Tooltip.hidePopup()'  >1 successful</span>
+         
+       </td>
+       <td class="hideProject">
+         &nbsp;
+       </td>
+     </tr>
+   </table>
+  </div>
+
+  <div id="btbovr_project9">
+    
+  </div>
+
+  <script type="text/javascript">
+      BS.Blocks._saved['t_ovr_project9']='';
+      
+      BS.CollapsableBlocks.registerBlock(new BS.ProjectBlock("t_", 'ovr_project9', 'DependenciesAndroid', "handle/successfulSmall.html", true));
+    </script>
+  <script type="text/javascript">
+  (function($) {
+    $("#btbovr_project9 > .tableCaption").first().addClass("firstRow");
+    
+  })(jQuery);
+</script>
+</div>
+<div class="build overview-page" id="p_project1"
+  ><script type="text/javascript">(function() {var handler = function() {
+    BS.Projects.updateProjectView('project1', 'Duality', false);};BS.EventTracker.subscribeOnProjectEvent('a', 8, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('b', 8, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('c', 6, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('e', 2, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('v', 0, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('t', 8, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('u', 8, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('r', 3, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('s', 0, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('x', 12, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('m', 4, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('l', 0, 'project1', handler);})();</script>
+<script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnProjectEvent('n', 0, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('p', 0, 'project1', handler);BS.EventTracker.subscribeOnProjectEvent('q', 0, 'project1', handler);})();</script>
+  
+  
+  
+
+  
+  
+
+  
+  <div class="projectHeader " id="ph_project1">
+   <table class="projectHeaderTable">
+     <tr>
+       <td class="projectName">
+         
+         <span class="pc btPopup pc_topRightButton" id="projPopupproject1" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'projectSummary', {show:[ 'Duality', 1, 1]});"
+><span class="pc__label">
+           <span  title="Project is successful. Click to expand / collapse details" class="handle handle_expanded handle_overview_successful" id="blockHandleovr_project1"></span>
+           <div class="project-icon" title="Project"></div>
+
+           <a href="project088f.html?projectId=Duality&amp;tab=projectOverview" title="Go to the &#34;Duality&#34; page">Duality</a>
+         </span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span>
+
+         
+         
+       </td>
+       
+       <td class="projectStatus err">
+         
+         
+       </td>
+       <td class="projectStatus failing">
+         
+         
+       </td>
+       <td class="projectStatus successful">
+         
+         
+           
+           <span onmouseover='BS.Tooltip.showMessage(this, {shift:{x:10, y:18}, hideDelay: 300}, "3 successful build configurations");' onmouseout='BS.Tooltip.hidePopup()'  >3 successful</span>
+         
+       </td>
+       <td class="hideProject">
+         &nbsp;
+       </td>
+     </tr>
+   </table>
+  </div>
+
+  <div id="btbovr_project1">
+    
+  </div>
+
+  <script type="text/javascript">
+      BS.Blocks._saved['t_ovr_project1']='';
+      
+      BS.CollapsableBlocks.registerBlock(new BS.ProjectBlock("t_", 'ovr_project1', 'Duality', "handle/successfulSmall.html", true));
+    </script>
+  <script type="text/javascript">
+  (function($) {
+    $("#btbovr_project1 > .tableCaption").first().addClass("firstRow");
+    
+  })(jQuery);
+</script>
+</div>
+<div class="build overview-page" id="p_project8"
+  ><script type="text/javascript">(function() {var handler = function() {
+    BS.Projects.updateProjectView('project8', 'Farseer', false);};BS.EventTracker.subscribeOnProjectEvent('a', 2, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('b', 2, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('c', 2, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('e', 0, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('v', 0, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('t', 2, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('u', 2, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('r', 2, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('s', 0, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('x', 4, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('m', 3, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('l', 0, 'project8', handler);})();</script>
+<script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnProjectEvent('n', 0, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('p', 0, 'project8', handler);BS.EventTracker.subscribeOnProjectEvent('q', 0, 'project8', handler);})();</script>
+  
+  
+  
+
+  
+  
+
+  
+  <div class="projectHeader " id="ph_project8">
+   <table class="projectHeaderTable">
+     <tr>
+       <td class="projectName">
+         
+         <span class="pc btPopup pc_topRightButton" id="projPopupproject8" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'projectSummary', {show:[ 'Farseer', 1, 1]});"
+><span class="pc__label">
+           <span  title="Project is successful. Click to expand / collapse details" class="handle handle_expanded handle_overview_successful" id="blockHandleovr_project8"></span>
+           <div class="project-icon" title="Project"></div>
+
+           <a href="project7d47.html?projectId=Farseer&amp;tab=projectOverview" title="Go to the &#34;Farseer&#34; page">Farseer</a>
+         </span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span>
+
+         <span class="projectDescription">openTK</span>
+         
+       </td>
+       
+       <td class="projectStatus err">
+         
+         
+       </td>
+       <td class="projectStatus failing">
+         
+         
+       </td>
+       <td class="projectStatus successful">
+         
+         
+           
+           <span onmouseover='BS.Tooltip.showMessage(this, {shift:{x:10, y:18}, hideDelay: 300}, "1 successful build configuration");' onmouseout='BS.Tooltip.hidePopup()'  >1 successful</span>
+         
+       </td>
+       <td class="hideProject">
+         &nbsp;
+       </td>
+     </tr>
+   </table>
+  </div>
+
+  <div id="btbovr_project8">
+    
+  </div>
+
+  <script type="text/javascript">
+      BS.Blocks._saved['t_ovr_project8']='';
+      
+      BS.CollapsableBlocks.registerBlock(new BS.ProjectBlock("t_", 'ovr_project8', 'Farseer', "handle/successfulSmall.html", true));
+    </script>
+  <script type="text/javascript">
+  (function($) {
+    $("#btbovr_project8 > .tableCaption").first().addClass("firstRow");
+    
+  })(jQuery);
+</script>
+</div>
+<div class="build overview-page" id="p_project6"
+  ><script type="text/javascript">(function() {var handler = function() {
+    BS.Projects.updateProjectView('project6', 'OpenTK', false);};BS.EventTracker.subscribeOnProjectEvent('a', 2, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('b', 2, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('c', 2, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('e', 0, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('v', 0, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('t', 2, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('u', 2, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('r', 2, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('s', 0, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('x', 6, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('m', 3, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('l', 0, 'project6', handler);})();</script>
+<script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnProjectEvent('n', 0, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('p', 0, 'project6', handler);BS.EventTracker.subscribeOnProjectEvent('q', 0, 'project6', handler);})();</script>
+  
+  
+  
+
+  
+  
+
+  
+  <div class="projectHeader " id="ph_project6">
+   <table class="projectHeaderTable">
+     <tr>
+       <td class="projectName">
+         
+         <span class="pc btPopup pc_topRightButton" id="projPopupproject6" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'projectSummary', {show:[ 'OpenTK', 1, 1]});"
+><span class="pc__label">
+           <span  title="Project is successful. Click to expand / collapse details" class="handle handle_expanded handle_overview_successful" id="blockHandleovr_project6"></span>
+           <div class="project-icon" title="Project"></div>
+
+           <a href="project231c.html?projectId=OpenTK&amp;tab=projectOverview" title="Go to the &#34;OpenTK&#34; page">OpenTK</a>
+         </span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span
+></span></span>
+
+         <span class="projectDescription">openTK</span>
+         
+       </td>
+       
+       <td class="projectStatus err">
+         
+         
+       </td>
+       <td class="projectStatus failing">
+         
+         
+       </td>
+       <td class="projectStatus successful">
+         
+         
+           
+           <span onmouseover='BS.Tooltip.showMessage(this, {shift:{x:10, y:18}, hideDelay: 300}, "2 successful build configurations");' onmouseout='BS.Tooltip.hidePopup()'  >2 successful</span>
+         
+       </td>
+       <td class="hideProject">
+         &nbsp;
+       </td>
+     </tr>
+   </table>
+  </div>
+
+  <div id="btbovr_project6">
+    
+  </div>
+
+  <script type="text/javascript">
+      BS.Blocks._saved['t_ovr_project6']='';
+      
+      BS.CollapsableBlocks.registerBlock(new BS.ProjectBlock("t_", 'ovr_project6', 'OpenTK', "handle/successfulSmall.html", true));
+    </script>
+  <script type="text/javascript">
+  (function($) {
+    $("#btbovr_project6 > .tableCaption").first().addClass("firstRow");
+    
+  })(jQuery);
+</script>
+</div>
+</div><!--##END:overviewMainInner##-->
+</div>
+
+  
+  
+    <script type="text/javascript">
+      $('overviewMain').refresh = BS.Refreshable.createRefreshFunction('overviewMain', 'overview.html', '');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+<form id="pauseBuildTypeForm" action="http://localhost/action.html" method="post" onsubmit="return BS.PauseBuildTypeDialog.submit();" autocomplete="off">
+  <div id="pauseBuildTypeFormDialog" class="pauseBuildTypeFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.PauseBuildTypeDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="pauseBuildTypeFormTitle">Pause build configuration</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  <textarea name="pauseComment"
+            rows="5" cols="46" class="commentTextArea"
+            onfocus="if (this.value == this.defaultValue) this.value = ''"
+            onblur="if (this.value == '') this.value='&lt;your comment here&gt;'">&lt;your comment here&gt;</textarea>
+  <input type="hidden" name="pauseBuildType" value=""/>
+  <input type="hidden" name="pause" value=""/>
+  
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Pause" class="btn btn_primary submitButton " id="PauseSubmitButton"    />
+
+    <a class="btn cancel" onclick="BS.PauseBuildTypeDialog.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <i id="pauseProgressIcon" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form></div>
+    
+    
+  
+  <div id="projects_visibleDialogContainer"></div>
+<div id="bt_visibleDialogContainer"></div>
+      </div>
+    </div>
+
+    
+
+
+
+
+
+<div id="footer">
+  <div class="footerExtensions fixedWidth">
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.usageStatistics.impl.GetRequestDetector: name:getRequestProcessor: /plugins/usage-statistics/empty.jsp -->
+    
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.usageStatistics.impl.GetRequestDetector -->
+  </div>
+
+  <div class="footerMainContainer">
+    <div class="footerMain fixedWidth clearfix">
+      <div class="column1">
+        <div class="columnContent">
+          <a class="helpLink" target="_blank" href="http://confluence.jetbrains.com/display/TCD9"> Help</a>
+          <a class="feedbackLink" target="_blank" href="http://www.jetbrains.com/teamcity/feedback?source=footer&amp;version=9.0.3%20(build%2032334)&amp;build=32334&amp;mode=ent">Feedback</a>
+        </div>
+      </div>
+
+      <div class="column2">
+        <div class="columnContent">
+          <a target="_blank" href="http://www.jetbrains.com/teamcity/?fromServer">TeamCity Enterprise</a><span class="greyNote"><span class="vWord">Version</span> 9.0.3 (build 32334)</span>, Open Source License
+
+          
+            <div>
+              <span class="newVersionLink">
+
+
+
+
+<a target="_blank" title="Download TeamCity 9.0.4 (build 32407)"
+     href="http://www.jetbrains.com/teamcity/download/index.html?fromServer">Get new version!</a>
+
+
+</span>
+            </div>
+          
+
+        </div>
+      </div>
+
+      <div class="column3">
+        <div class="columnContent">
+          <a onclick="BS.Util.popupWindow('showAgreement.html', 'agreement'); return false" href="#">License agreement</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function($) {
+    var mainContent = $('#mainContent'),
+        footer = $('#footer');
+
+    mainContent.css('padding-bottom', footer.height() + 'px');
+    footer.css('height', footer.height() + 'px');
+    footer.css('visibility', 'visible');
+  })(jQuery);
+</script>
+
+
+  </div>
+
+  <script type="text/javascript">(function() {var handler = function() {BS.ServerLink.onShutdown();};BS.EventTracker.subscribeOnEvent('H', 0, handler);})();</script>
+
+  
+
+
+
+
+<form id="muteTestsForm" action="#" method="post" onsubmit="return BS.BulkInvestigateDialog.submit();;" autocomplete="off">
+  <div id="muteTestsFormDialog" class="muteTestsFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.BulkInvestigateDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="muteTestsFormTitle">Mute test</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <div id="mute-dialog-container"></div>
+  <div><i id="mute-dialog-progress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i></div>
+
+  </div>
+</div></form>
+
+<form id="errorForm" action="#" method="post" onsubmit="return BS.ErrorDialog.close();;" autocomplete="off">
+  <div id="errorFormDialog" class="errorFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ErrorDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="errorFormTitle"></h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  </div>
+</div></form>
+
+<div id="shutdownDialog" class=" modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ServerUnavailableModalDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="shutdownDialogTitle">Server communication failure</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <strong id="shutdownDetails">Server is unavailable</strong>
+  <p id="onCommunicationFailure">Server stopped or communication with the server is not possible due to network failure.</p>
+  <p id="onServerShutdown">Server shutdown started.</p>
+  <p id="onAuthFailure">Please relogin to continue your work.</p>
+
+  </div>
+</div>
+
+
+<form id="runBuild" action="http://localhost/runCustomBuild.html" method="post" onsubmit="return BS.RunBuildDialog.submit();" autocomplete="off">
+  <div id="runBuildDialog" class="runBuildDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.RunBuildDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="runBuildTitle">Run Custom Build</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  </div>
+</div></form>
+
+<form id="stopBuildForm" action="http://localhost/ajax.html" method="post" onsubmit="return BS.StopBuildDialog.killBuild();;" autocomplete="off">
+  <div id="stopBuildFormDialog" class="stopBuildFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.StopBuildDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="stopBuildFormTitle">TODO</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <textarea id="removeQueuedBuildComment" name="comment" rows="3" cols="46" class="commentTextArea"
+            onfocus="if (this.value == this.defaultValue) this.value = ''" onblur="if (this.value == '') this.value='&lt;your comment here&gt;'">&lt;your comment here&gt;</textarea>
+  <input type="hidden" name="kill" value=""/>
+  <input type="hidden" name="operationKind" value="0"/>
+
+  <div id="moreToStop">
+    Loading related builds...
+    <i id="moreToStopLoader" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Loading related builds to stop..."></i>
+  </div>
+  <div id="moreToStopFragment" class="custom-scroll"></div>
+
+  <div id="moreToStopRetryNotice" class="attentionComment" style="display: none">The stop command has already been sent to the build. This will re-send stop command</div>
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Stop" class="btn btn_primary submitButton " id="submitRemoveQueuedBuild"  name="submit"  />
+
+    <a class="btn cancel" onclick="BS.StopBuildDialog.close(); return false" id="cancelRemoveQueuedBuild" >Cancel</a><script>BS.fixCancel();</script>
+    <i id="stopBuildIndicator" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+<form id="investigationForm" action="#" method="post" onsubmit="return BS.ResponsibilityDialog.submit();" autocomplete="off">
+  <div id="investigationFormDialog" class="investigationFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ResponsibilityDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="investigationFormTitle">Responsibility</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  </div>
+</div></form>
+
+
+
+<form id="editBuildTagsForm" action="http://localhost/ajax.html" method="post" onsubmit="return BS.Tags.submitTags();" autocomplete="off">
+  <div id="editBuildTagsFormDialog" class="editBuildTagsFormDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.Tags.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="editBuildTagsFormTitle">Edit tags</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  
+
+
+<textarea style="resize: both; " class="expandable commentTextArea" name="buildTagsInfo" id="buildTagsInfoEditTags"      ></textarea>
+<script type="text/javascript">
+  BS.VisibilityHandlers.attachTo('buildTagsInfoEditTags', {
+    updateVisibility: function() {
+      var element = jQuery(BS.Util.escapeId('buildTagsInfoEditTags'));
+      if (element.length) {
+        element.textAreaExpander(40, 200);
+      } else {
+        BS.VisibilityHandlers.detachFrom('buildTagsInfoEditTags');
+      }
+    }
+  });
+</script>
+
+<div id="editBuildTagsForm_availableTags"></div>
+<span class="note"></span>
+  <div class="tagsApplyAll" style="display: none;">
+  
+  
+  
+    <input type="checkbox" 
+           name="applyToChainBuilds"
+           id="tag_applyToChainBuilds"
+           
+           
+           
+           
+           
+           
+           
+           
+           value="true">
+    <input type="hidden" name="_applyToChainBuilds" value="">
+  
+
+
+  <label for="tag_applyToChainBuilds">Apply tags to all builds that this build snapshot depends on</label>
+  <div class="grayNote">Note: existing tags in dependent builds will <i>not</i> be removed</div>
+</div>
+
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Save" class="btn btn_primary submitButton "     />
+
+    <a class="btn cancel" onclick="BS.Tags.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <input type="hidden" value="" name="editTagsForPromotion"/>
+    <i id="savingTags" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+
+<form id="abstractLoading" action="#" method="post" onsubmit="return BS.LoadingDialog.close();" autocomplete="off">
+  <div id="abstractLoadingDialog" class="abstractLoadingDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.LoadingDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="abstractLoadingTitle">Loading...</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  <i id="abstractProgress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+
+  </div>
+</div></form>
+
+  </body>
+
+<!-- Mirrored from localhost/overview.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2015 17:32:09 GMT -->
+</html>
