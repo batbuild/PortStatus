@@ -1,0 +1,2507 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from localhost/viewType.html?buildTypeId=Dependencies_NVorbisRelease by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2015 17:21:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Dependencies :: NVorbis-Release &gt; Overview &mdash; TeamCity</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    
+<link rel="Shortcut Icon" href="favicond387.ico?v8" type="image/x-icon"/>
+
+<meta name="format-detection" content="telephone=no"/>
+
+<meta name="application-name" content="TeamCity (Dependencies :: NVorbis-Release &amp;gt; Overview &amp;mdash; TeamCity)"/>
+<meta name="description" content="Powerful Continuous Integration and Build Server"/>
+<meta name="viewport" content="width=1000">
+<link rel="icon" href="img/icons/TeamCity512d387.png?v8" sizes="512x512"/>
+<link rel="icon" href="img/icons/TeamCity128d387.png?v8" sizes="128x128"/>
+<link rel="icon" href="img/icons/TeamCity48d387.png?v8" sizes="48x48"/>
+<link rel="icon" href="img/icons/TeamCity32d387.png?v8" sizes="32x32"/>
+
+<link rel="icon" href="img/icons/TeamCity16d387.png?v8" sizes="16x16"/>
+
+    <!-- :linkCSS --><style type="text/css">
+  @import "res/-36551969708621551815a07.css?v=1434034307663";
+</style>
+
+
+    <!--[if IE 7]>
+    <style type="text/css">
+      @import /css/ie7.css;
+      @import /css/FontAwesome/css/font-awesome-ie7.min.css;
+    </style>
+<![endif]-->
+
+
+    <script type="text/javascript">
+  (function() {
+    var classNames = [];
+
+    /*@cc_on
+      classNames.push('ua-ie');
+      @if (@_jscript_version < 9) classNames.push('ua-ie8-below') @end
+    @*/
+
+    var ua = window.navigator.userAgent.toLowerCase();
+
+    if (ua.indexOf('mac') > -1) {
+      classNames.push('ua-mac');
+    } else if (ua.indexOf('windows') !== -1 && ua.indexOf('chrome') !== -1) {
+      classNames.push('ua-win-chrome');
+    }
+
+    document.documentElement.className = classNames.join(' ');
+  })();
+</script>
+    <script type="text/javascript">
+  var base_uri=window.location.protocol+"//"+window.location.host+"";
+</script>
+
+    
+
+    
+<!-- :linkCSS --><style type="text/css">
+  @import "res/23197217611532022425a07.css?v=1434034307663";
+</style>
+
+
+<!-- :linkScript --><script type="text/javascript" src="res/13186001004947130465a07.js?v=1434034307663"></script>
+
+
+<script type="text/javascript">
+  window.$j = jQuery.noConflict();
+</script>
+
+<!-- :linkScript --><script type="text/javascript" src="res/18560784067845212605a07.js?v=1434034307663"></script>
+
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/-47352584472883172375a07.js?v=1434034307663"></script>
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/-34740881818844512385a07.js?v=1434034307663"></script>
+
+
+    
+<script type="text/javascript">
+  var internalProps = [];
+
+  internalProps['teamcity.ui.pollInterval'] = 6;
+  internalProps['teamcity.ui.serverAvailability.pollInterval'] = 3;
+
+  internalProps['teamcity.ui.events.pollInterval'] = 6;
+  internalProps['teamcity.ui.systemProblems.pollInterval'] = 20;
+  internalProps['teamcity.ui.problemsSummary.pollInterval'] = 8;
+  internalProps['teamcity.ui.buildQueueEstimates.pollInterval'] = 10;
+
+  // Doesn't use BS.SubscriptionManager and standard subscription mechanism
+  internalProps['teamcity.ui.cleanupNotificatorProgress.pollInterval'] = 6;
+</script>
+
+
+    <!-- :linkScript --><script type="text/javascript" src="res/-42700968017468149075a07.js?v=1434034307663"></script>
+
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/20839995119179176525a07.js?v=1434034307663"></script>
+
+
+    
+
+<!-- :linkCSS --><style type="text/css">
+  @import "res/72849222456098178075a07.css?v=1434034307663";
+</style>
+
+<!-- :linkScript --><script type="text/javascript" src="res/-32884429132992613285a07.js?v=1434034307663"></script>
+
+
+    <script type="text/javascript">
+      BS.Socket.init(true);
+      BS.ServerLink.init('32334');
+
+      
+      BS.topNavPane = new TabbedPane('top');
+
+      BS.topNavPane.addTab("overview", {
+        caption: "Projects",
+        url: "/overview.html"
+      });
+
+      BS.topNavPane.addTab("changes", {
+        caption: "Changes",
+        url: "/changes.html"
+      });
+
+      BS.topNavPane.addTab("agents", {
+        caption: "Agents (2)",
+        url: "/agents.html"
+      });
+
+      
+      BS.topNavPane.addTab("queue", {
+        caption: "Build Queue (0)",
+        url: "/queue.html"
+      });
+      
+
+      (function() {
+        function initPage() {
+        
+          if (document.location.href.indexOf('#') == -1) {
+            restoreScrolling();
+          }
+        
+
+          if (typeof BS == "undefined") return;
+          BS.initReloadBlocker();
+        }
+
+        $j(document).ready(initPage);
+      })();
+
+      $j(document).ready(function() {
+        if (typeof BS == "undefined") return;
+        BS.StatisticsMonitor.start();
+        BS.InvestigationsCounterMonitor.start(-1000);
+        BS.EventTracker.startTracking("eventTracker.html");
+        BS.SubscriptionManager.checkNow();
+      });
+
+      Event.observe(window, "unload", function() {
+        rememberScrolling();
+        if (typeof BS == "undefined") return;
+        BS.blockRefreshPermanently();
+        BS.SubscriptionManager.dispose();
+      });
+    </script>
+  <!-- :linkCSS --><style type="text/css">
+  @import "http://guest:@localhost/res/-1853059006627851234.css?v=1434034307663";
+</style>
+
+    <!-- :linkScript --><script type="text/javascript" src="http://guest:@localhost/res/-6653513952042393464.js?v=1434034307663"></script>
+
+    
+
+    <script type="text/javascript">
+      BS.Navigation.items = [];BS.Navigation.items.push({title: "Dependencies",url: "project.html?projectId=Dependencies",selected: false,itemClass: "project",projectId: "Dependencies",siblingsTree: {parentId: "_Root",buildTypeUrlFormat: BS.Navigation.fromUrl("Dependencies_NVorbisRelease", "{id}")}});BS.Navigation.items.push({title: "NVorbis-Release <small></small>",url: "viewType.html?buildTypeId=Dependencies_NVorbisRelease",selected: true,itemClass: "buildType ",buildTypeId: "Dependencies_NVorbisRelease",siblingsTree: {parentId: "Dependencies",buildTypeUrlFormat: BS.Navigation.fromUrl("Dependencies_NVorbisRelease", "{id}")}});
+    </script>
+
+  
+  <!-- START EXTENSION CSS jetbrains.buildServer.serverSide.search.SearchController$1 name:searchBuildByNumber -->
+  <!-- :linkCSS --><style type="text/css">
+  @import "res/-39441135864799719265a07.css?v=1434034307663";
+</style>
+
+  <!-- END EXTENSION CSS jetbrains.buildServer.serverSide.search.SearchController$1 -->
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$1: name:searchBuildByNumber: /plugins/searchBuildByNumber/empty.jsp -->
+    
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$1 -->
+  
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.feedNotificator.extensions.FeedHeaderLinkProvider$1: name:feed: /feed/feedHeaderLink.html -->
+    
+
+
+<!-- TODO: pset correct feed type -->
+
+  <link rel="alternate" type="application/atom+xml" title="Feed of finished builds" href="http://buildserver/guestAuth/feed.html?buildTypeId=Dependencies_NVorbisRelease&amp;itemsType=builds&amp;userKey=guest"/>
+
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.feedNotificator.extensions.FeedHeaderLinkProvider$1 -->
+  
+  </head>
+
+  <body class="pageBG">
+
+  <div id="bodyWrapper">
+    <div class="ring-header"></div> <!-- Ring placeholder, do not remove -->
+    
+      <div id="loadingWarning">
+        LOADING...
+      </div>
+
+      <script type="text/javascript">
+        (function() {
+          function getLoadingDiv() {
+            return document.getElementById('loadingWarning');
+          }
+          var loadingTimeout = setTimeout(function(){
+            var div = getLoadingDiv();
+            if (div != null) {
+              div.style.display = 'block';
+            }
+          }, 500);
+
+          $j(document).ready(function() {
+            if (loadingTimeout) clearTimeout(loadingTimeout);
+            var div = getLoadingDiv();
+            if (div != null) {
+              BS.Util.hide(div);
+            }
+          });
+        })();
+      </script>
+    
+
+    <div id="topWrapper">
+      <div class="headBG clearfix">
+        <div class="fixedWidth">
+
+          
+          <a href="index.html" class="headerLogo"><i class="headerLogoImg" ></i></a>
+
+          <div id="tabsContainer"></div>
+          <div id="userPanel">
+            
+            <div class="info"><p><span class="investigationsTicker"></span>
+              
+              <span class="pc " id="sp_span_usernamePopup"><span class="pc__label">Guest user</span><span class="pc__toggle-wrapper">&nbsp;<span id="usernamePopup" class="toggle"></span></span></span><div id="sp_span_usernamePopupContent" class="popupDiv "><ul class="menuList"><li><a class="logout" href="#" onclick="BS.Logout('ajaxbfd1.html?logout=1'); return false" showdiscardchangesmessage="false">Log out</a></li></ul></div><script>BS.install_simple_popup('sp_span_usernamePopup', {shift: {x: -120, y: 15}, className: 'quickLinksMenuPopup'});</script>
+</div>
+            
+            
+          </div>
+        </div>
+        <div id="header-ready"></div>
+      </div>
+      <script type="text/javascript">
+        if (BS.topNavPane) {
+          BS.topNavPane.showIn('tabsContainer');
+          jQuery("#tabsContainer li").each(function() {
+            var self = jQuery(this);
+            if (!self.hasClass("first")) {
+              self.addClass("leftBorder")
+            }
+          });
+          BS.AllProjectsPopup.install();
+        }
+      </script>
+
+      <div class="fixedWidth clearfix">
+        <div class="quickLinks">
+          <div class="toolbarItem">
+      <div class="healthItemIndicatorContainer">
+        
+        
+        
+
+
+
+
+
+<span id="container_hi_Dependencies_NVorbisRelease">
+  
+</span>
+
+  <script type="text/javascript">
+    window.setTimeout(function() {
+      BS.ajaxUpdater($('container_hi_Dependencies_NVorbisRelease'), window['base_uri'] + '/buildTypeHealthStatusItems.html?buildTypeId=Dependencies_NVorbisRelease&excludeCategoryId=suggestion&compute=true', {evalScripts: true});
+    }, 300);
+  </script>
+
+
+      </div>
+    </div>
+
+    
+    
+    
+        </div>
+
+        
+        <ul id="mainNavigation"><li></li></ul>
+
+        <script type="text/javascript">
+            BS.Navigation.writeBreadcrumbs();
+        </script>
+      </div>
+    </div>
+
+    <div class="fixedWidth">
+      
+<a name="internalProjectIdUsedMessageKey"></a>
+<div class="messageNote" style='display: none; ' id="message_internalProjectIdUsedMessageKey">
+</div>
+
+      
+<a name="buildTypeExternalIdChanged"></a>
+<div class="messageNote" style='display: none; ' id="message_buildTypeExternalIdChanged">
+</div>
+
+
+      
+
+
+<!-- include PlaceId.BEFORE_CONTENT -->
+
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.controllers.CriticalErrorsPageExtension: name:__tc_criticalErrors: /pageBeforeContentCriticalErrors.jsp -->
+    
+
+
+
+
+
+
+<div id="globalHealthItems" class="refreshable">
+  <!--##BEGIN:globalHealthItemsInner##--><div id="globalHealthItemsInner" class="refreshableInner">
+  
+</div><!--##END:globalHealthItemsInner##-->
+</div>
+
+  
+  
+    <script type="text/javascript">
+      $('globalHealthItems').refresh = BS.Refreshable.createRefreshFunction('globalHealthItems', 'viewTypee7a6.html?buildTypeId=Dependencies_NVorbisRelease', '');
+    </script>
+  
+
+
+
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.controllers.CriticalErrorsPageExtension -->
+  
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$2: name:searchBuildByNumber: /plugins/searchBuildByNumber/input.jsp -->
+    
+
+<div id="inputIdF" style="display: none;" data-btId="Dependencies_NVorbisRelease">
+  <input class="quickSearchQuery"
+       id="searchField"
+       value=""
+       type="text"
+       autocomplete="off"
+       />
+<a href="#" onclick="BS.Search.go(false);" class="quickSearchButton" title="Search"><i class="icon-search"></i></a>
+
+</div>
+
+<!-- :linkScript --><script type="text/javascript" src="res/14411460271034815295a07.js?v=1434034307663"></script>
+
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$2 -->
+  
+<!-- end of include PlaceId.BEFORE_CONTENT -->
+
+
+      
+      <table class="tabsTable">
+        <tr>
+          <td>
+            <div id="tabsContainer3" class="simpleTabs"></div>
+          </td>
+          <td class="besideContent">
+            
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="archivedProjectsContent" class="popupDiv" style="display:none;">
+    </div>
+
+    
+<div id="buildResultsSummaryTemplate" style="display:none">
+  <div class="summaryContainer">
+    <span id="detailedSummary:##BUILD_ID##">
+      <table cellspacing="0">
+      <tr>
+        <td>
+          <div class="header">Build shortcuts</div>
+          <ul class="bsLinks">
+            <li>
+              <a href="viewLog562c.html?tab=buildLog&amp;buildTypeId=##BUILD_TYPE_ID##&buildId=##BUILD_ID##"
+                     title="View log messages">Build log</a>
+              <span class="separator">|</span>
+              <a href="downloadBuildLog9875.html?buildId=##BUILD_ID##&archived=true" target="_blank"
+                      title="Download archived build log">.zip</a>
+            </li>
+            <li><a href="viewLog75a8.html?tab=buildParameters&amp;buildTypeId=##BUILD_TYPE_ID##&buildId=##BUILD_ID##"
+                   title="View parameters">Parameters</a></li>
+            <li><span id="summaryProgress:##BUILD_ID##" style="font-weight: normal; color:#888;"></span></li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+    </span>
+  </div>
+</div>
+<div id="issueDetailsTemplate" style="display:none">
+  <span id="detailedSummary:##ISSUE_ID##_##PROJECT_ID##">
+    <i id="inProgress" style="" class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+  </span>
+</div>
+
+
+    <div id="mainContent" class="fixedWidth clearfix">
+      <div id="content">
+        
+<a name="accessDenied"></a>
+<div class="successMessage" style='display: none; ' id="message_accessDenied">
+</div>
+
+        <script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnProjectEvent('n', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('l', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('m', 3, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('p', 0, 'project4', handler);BS.EventTracker.subscribeOnProjectEvent('q', 0, 'project4', handler);})();</script>
+    <script type="text/javascript">(function() {var handler = function() {BS.reload();};BS.EventTracker.subscribeOnBuildTypeEvent('s', 0, 'bt17', handler);})();</script>
+    
+    <script type="text/javascript">(function() {var handler = function() {BS.BuildType.updateView();};BS.EventTracker.subscribeOnBuildTypeEvent('a', 0, 'bt17', handler);BS.EventTracker.subscribeOnBuildTypeEvent('b', 0, 'bt17', handler);BS.EventTracker.subscribeOnBuildTypeEvent('c', 0, 'bt17', handler);BS.EventTracker.subscribeOnBuildTypeEvent('e', 0, 'bt17', handler);BS.EventTracker.subscribeOnBuildTypeEvent('v', 0, 'bt17', handler);BS.EventTracker.subscribeOnBuildTypeEvent('t', 0, 'bt17', handler);BS.EventTracker.subscribeOnBuildTypeEvent('u', 0, 'bt17', handler);BS.EventTracker.subscribeOnBuildTypeEvent('x', 1, 'bt17', handler);})();</script>
+    
+    <div id="buildConfigurationContainer" class="refreshable">
+  <!--##BEGIN:buildConfigurationContainerInner##--><div id="buildConfigurationContainerInner" class="refreshableInner">
+      <script type="text/javascript">
+        BS.BuildType.updateStatus(false);
+        
+      </script>
+
+      
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">(function() {var tabs = new TabbedPane("BUILD_CONF@TAB");// plugin buildTypeStatusDiv:tabs.addTab('buildTypeStatusDiv', {caption: 'Overview',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=buildTypeStatusDiv'});// plugin buildTypeHistoryList:tabs.addTab('buildTypeHistoryList', {caption: 'History',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=buildTypeHistoryList'});// plugin buildTypeChangeLog:tabs.addTab('buildTypeChangeLog', {caption: 'Change Log',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=buildTypeChangeLog'});// plugin buildTypeIssueLog:tabs.addTab('buildTypeIssueLog', {caption: 'Issue Log',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=buildTypeIssueLog'});// plugin buildTypeStatistics:tabs.addTab('buildTypeStatistics', {caption: 'Statistics',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=buildTypeStatistics'});// plugin compatibilityList:tabs.addTab('compatibilityList', {caption: 'Compatible Agents (2)',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=compatibilityList'});// plugin pendingChangesDiv:tabs.addTab('pendingChangesDiv', {caption: 'Pending Changes',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=pendingChangesDiv'});// plugin slackNotifications:tabs.addTab('slackNotifications', {caption: 'Slack',url: 'viewType.html?buildTypeId=Dependencies_NVorbisRelease&tab=slackNotifications'});tabs.showIn('tabsContainer3');tabs.setActiveCaption('buildTypeStatusDiv');// Example: "Users and Groups \u2014 TeamCity" -> "Users and Groups > Users \u2014 TeamCity"var tabTitle = '> Overview \u2014 TeamCity';if (document.title.indexOf(tabTitle) == -1) {document.title = document.title.replace(/\u2014 TeamCity$/, tabTitle);}})();</script>
+  
+        <div style="padding-top: 3px" id="messagesDiv">
+           
+<a name="sourcesCleanedMessage"></a>
+<div class="successMessage" style='display: none; ' id="message_sourcesCleanedMessage">
+</div>
+
+           
+<a name="buildHasBeenRemoved"></a>
+<div class="successMessage" style='display: none; ' id="message_buildHasBeenRemoved">
+</div>
+
+        </div>
+        
+      
+  
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.controllers.buildType.tabs.OverviewBuildTypeTab: name:buildTypeStatusDiv: /buildTypeStatusDiv.jsp -->
+    <div id="buildTypeStatusDiv">
+  
+  
+  
+  
+    
+    
+      
+      
+    
+  
+
+  <div class="divsWithHeaders">
+    <div class="first clearfix" id="pendingChangesDiv">
+      <h2>Pending changes</h2>
+      
+      No pending changes
+    </div>
+
+    <div>
+      <h2>Current status</h2>
+      
+<a name="buildNotFound"></a>
+<div class="successMessage" style='display: none; ' id="message_buildNotFound">
+</div>
+
+
+      <span class="runningStatus">Idle</span>
+      
+      <span id="buildType:14de31bb799:systemProblems" class="systemProblemsBar" style="display:none;" onclick="_tc_es(event)" >
+  <span id="buildType:14de31bb799:systemProblemsText" class="systemProblemsBarText" data-maxWidth="100">Configuration problems found</span><a
+    title="View more information" href="#" class="systemProblemsBarLink" onclick="BS.SystemProblemsPopup.showDetails('bt17', '', '', true, this); return false;">details &raquo;</a>
+</span>
+<script type="text/javascript">BS.SystemProblems.registerProblemId('bt17', '14de31bb799');</script>
+      
+    </div>
+
+    
+
+    <div>
+      <div id="historyTable" class="refreshable">
+  <!--##BEGIN:historyTableInner##--><div id="historyTableInner" class="refreshableInner">
+        <div>
+          
+          
+
+          <h2 style="width: 100%;">Recent history</h2>
+
+            <div id="filterAboveTable">
+              <form id="historyFilter" action="http://guest:@localhost/viewType.html" method="post" style="float: right;">
+                <input type="hidden" name="buildTypeId" value="Dependencies_NVorbisRelease"/>
+                <input type="hidden" name="tab" value="buildTypeStatusDiv"/>
+                <input type="hidden" name="tag" value=""/>
+                <input type="hidden" name="privateTag" value=""/>
+                
+  
+  
+    <input type="checkbox" 
+           name="showAllBuilds"
+           id="showAllBuilds"
+           
+           
+           onclick="BS.HistoryTable.doSearch()"
+           
+           
+           
+           checked
+           
+           value="true">
+    <input type="hidden" name="_showAllBuilds" value="">
+  
+
+
+                <label for="showAllBuilds">Show canceled and failed to start builds</label>
+              </form>
+
+              <div id="savingFilter">
+                <i id="inProgress" style="" class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+                Updating results...
+              </div>
+            </div>
+
+            <div id="filterByTags">
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+          
+        </div>
+
+        
+          
+  <div class="clr"></div>
+
+  <div class="successMessage" id="successMessage" style="display: none; background-color: #fff;">&nbsp;</div>
+  <table cellspacing="0" class="testList historyList dark borderBottom">
+    <thead>
+      <tr>
+        
+          
+          
+            <th class="branch"></th>
+          
+        
+        <th class="buildNumber"></th>
+        <th>Results</th>
+        <th>Artifacts</th>
+        <th>Changes</th>
+        <th class="sorted">Started</th>
+        <th>Duration</th>
+        <th>Agent</th>
+        <th>Tags</th>
+        <th class="autopin">&nbsp;</th>
+        <th title="Pinned builds won't be removed from the history upon automatic history cleanup"></th>
+      </tr>
+    </thead>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10717")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #10
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:10717:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10717");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10717" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10717).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10717).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="viewLog4eb2.html?buildId=10717&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:10717:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10717" onmouseover="BS.BuildResultsPopupTracker(10717).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10717:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10717" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10717Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="viewLogecb0.html?buildId=10717&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10717" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10717);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="4 months ago">11&nbsp;Feb&nbsp;15&nbsp;22:14</span></td>
+  
+    <td class=" duration">17s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup10717'] = new BS.Popup('viewTagsPopup-10717', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup10717'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup10717'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:10717" onmouseover="BS['_ViewTagsPopup10717'].showPopupNearElement(this, 10717);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-10717" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd10717" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10715")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #9
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="http://guest:@localhost/img/buildStates/buildFailed.png" id="build:10715:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10715");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10715" style="display: none;">Build failed<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10715).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10715).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=10715&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:10715:text">Exit code 1</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10715" onmouseover="BS.BuildResultsPopupTracker(10715).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10715:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10715" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10715Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=10715&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=10715&amp;tab=buildChangesDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="" id='changes:10715'>andrea (1)</a></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10715" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10715);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="4 months ago">11&nbsp;Feb&nbsp;15&nbsp;22:11</span></td>
+  
+    <td class=" duration">22s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup10715'] = new BS.Popup('viewTagsPopup-10715', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup10715'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup10715'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:10715" onmouseover="BS['_ViewTagsPopup10715'].showPopupNearElement(this, 10715);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-10715" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd10715" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10714")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #8
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="http://guest:@localhost/img/buildStates/buildFailed.png" id="build:10714:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10714");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10714" style="display: none;">Build failed<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10714).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10714).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=10714&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:10714:text">Exit code 1</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10714" onmouseover="BS.BuildResultsPopupTracker(10714).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10714:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10714" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10714Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=10714&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10714" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10714);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="4 months ago">11&nbsp;Feb&nbsp;15&nbsp;22:01</span></td>
+  
+    <td class=" duration">16s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup10714'] = new BS.Popup('viewTagsPopup-10714', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup10714'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup10714'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:10714" onmouseover="BS['_ViewTagsPopup10714'].showPopupNearElement(this, 10714);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-10714" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd10714" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("10680")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #7
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="http://guest:@localhost/img/buildStates/buildFailed.png" id="build:10680:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_10680");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_10680" style="display: none;">Build failed<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(10680).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(10680).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=10680&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:10680:text">Exit code 1 (new)</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:10680" onmouseover="BS.BuildResultsPopupTracker(10680).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:10680:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:10680" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:10680Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=10680&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:10680" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 10680);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="4 months ago">11&nbsp;Feb&nbsp;15&nbsp;19:55</span></td>
+  
+    <td class=" duration">29s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup10680'] = new BS.Popup('viewTagsPopup-10680', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup10680'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup10680'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:10680" onmouseover="BS['_ViewTagsPopup10680'].showPopupNearElement(this, 10680);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-10680" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd10680" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("6526")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #6
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:6526:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_6526");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_6526" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(6526).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(6526).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=6526&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:6526:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:6526" onmouseover="BS.BuildResultsPopupTracker(6526).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:6526:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:6526" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:6526Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=6526&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:7318" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 7318);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="9 months ago">11&nbsp;Sep&nbsp;14&nbsp;18:54</span></td>
+  
+    <td class=" duration">1m:09s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup7318'] = new BS.Popup('viewTagsPopup-7318', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup7318'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup7318'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:7318" onmouseover="BS['_ViewTagsPopup7318'].showPopupNearElement(this, 7318);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-7318" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd6526" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("4151")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #5
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:4151:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_4151");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_4151" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(4151).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(4151).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=4151&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:4151:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:4151" onmouseover="BS.BuildResultsPopupTracker(4151).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:4151:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:4151" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:4151Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=4151&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:4740" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 4740);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="12 months ago">04&nbsp;Jun&nbsp;14&nbsp;22:18</span></td>
+  
+    <td class=" duration">16s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup4740'] = new BS.Popup('viewTagsPopup-4740', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup4740'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup4740'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:4740" onmouseover="BS['_ViewTagsPopup4740'].showPopupNearElement(this, 4740);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-4740" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd4151" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("4139")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #4
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:4139:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_4139");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_4139" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(4139).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(4139).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=4139&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:4139:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:4139" onmouseover="BS.BuildResultsPopupTracker(4139).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:4139:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:4139" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:4139Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=4139&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:4718" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 4718);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="12 months ago">04&nbsp;Jun&nbsp;14&nbsp;22:04</span></td>
+  
+    <td class=" duration">17s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup4718'] = new BS.Popup('viewTagsPopup-4718', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup4718'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup4718'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:4718" onmouseover="BS['_ViewTagsPopup4718'].showPopupNearElement(this, 4718);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-4718" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd4139" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("3250")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #3
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:3250:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_3250");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_3250" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(3250).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(3250).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=3250&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:3250:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:3250" onmouseover="BS.BuildResultsPopupTracker(3250).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:3250:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:3250" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:3250Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=3250&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:3721" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 3721);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="14 months ago">31&nbsp;Mar&nbsp;14&nbsp;21:56</span></td>
+  
+    <td class=" duration">18s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup3721'] = new BS.Popup('viewTagsPopup-3721', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup3721'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup3721'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:3721" onmouseover="BS['_ViewTagsPopup3721'].showPopupNearElement(this, 3721);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-3721" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd3250" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("3238")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #2
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="img/buildStates/buildSuccessful.png" id="build:3238:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_3238");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_3238" style="display: none;">Build was successful<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(3238).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(3238).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=3238&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:3238:text">Success</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:3238" onmouseover="BS.BuildResultsPopupTracker(3238).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:3238:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:3238" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:3238Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=3238&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:3703" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 3703);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="14 months ago">31&nbsp;Mar&nbsp;14&nbsp;19:16</span></td>
+  
+    <td class=" duration">33s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup3703'] = new BS.Popup('viewTagsPopup-3703', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup3703'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup3703'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:3703" onmouseover="BS['_ViewTagsPopup3703'].showPopupNearElement(this, 3703);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-3703" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd3238" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+      
+
+      <tr >
+        
+
+
+  
+  
+    <script type="text/javascript"> //TODO implement unsubscribe method better
+      BS.RunningBuilds.unsubscribeFromBuild("3237")
+    </script>
+  
+
+
+    <td class="  branch">
+      
+    </td>
+  
+    <td class=" buildNumber">
+      <span class="buildNumberInner" style="white-space: nowrap;">
+        #1
+        
+
+        
+        
+      </span>
+    </td>
+  
+    
+    <td class=" status">
+      <img src="http://guest:@localhost/img/buildStates/buildFailed.png" id="build:3237:img" class="icon buildDataIcon"  onmouseover='BS.Tooltip.showMessageFromContainer(this, {shift:{x:10, y:18}, hideDelay: 300}, "dataHover_3237");' onmouseout='BS.Tooltip.hidePopup()'  /><div id="dataHover_3237" style="display: none;">Build failed<br/>Build agent: 
+
+
+
+  
+  <span class="non-link-agent-name">Server</span></div>
+      <span class="pc" onmouseover="BS.BuildResultsPopupTracker(3237).stopHidingPopup();" onmouseout="BS.BuildResultsPopupTracker(3237).hidePopup();"
+><span class="pc__label"><a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=3237&amp;tab=buildResultsDiv&amp;buildTypeId=Dependencies_NVorbisRelease" title="View build results" ><span id="build:3237:text">Cannot start build runner (new)</span
+          ></a></span><span class="pc__toggle-wrapper">&nbsp;<span id="results:3237" onmouseover="BS.BuildResultsPopupTracker(3237).showPopup('bt17', true, 'true', this);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+      
+    </td>
+  
+    <td class=" link artifactsLink">
+      <span id="build:3237:noArtifactsText" class="commentText"><span class="none"><span class="pc" id="hiddenArtifacts:3237" onmouseover="if(!window.event) window.event = event;BS.bindPopup(this, 'simplePopup', {show:[{}]});"><span class="pc__label">None</span><span class="pc__toggle-wrapper">&nbsp;<span class="toggle"></span></span></span><div id="hiddenArtifacts:3237Content" class="popupDiv "><div>No user-defined artifacts in this build, see <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=3237&amp;tab=artifacts&amp;buildTypeId=Dependencies_NVorbisRelease&amp;showAll=true" title="View build artifacts" >hidden artifacts</a>.</div></div>
+</span></span></td>
+  
+    <td class=" link changesLink">
+
+
+
+
+
+<span class="pc" onmouseover="BS.ChangesPopup.stopHidingPopup();" onmouseout="BS.ChangesPopup.hidePopup();"
+><span class="pc__label"><span class="commentText">No changes</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="changes:3701" onmouseover="BS.ChangesPopup.showBuildChangesPopup(this, 3701);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+</td>
+  
+    <td class=" startDate"><span class="date" title="14 months ago">31&nbsp;Mar&nbsp;14&nbsp;19:14</span></td>
+  
+    <td class=" duration">1m:14s</td>
+  
+    <td class=" nowrap agentDetails"><span class="non-link-agent-name">Server</span></td>
+  
+    <td class=" tags">
+      
+
+
+  
+  
+
+
+  
+  
+
+
+  
+
+<script type="text/javascript">
+  BS['_ViewTagsPopup3701'] = new BS.Popup('viewTagsPopup-3701', {
+    shift: {x: -20, y: 20}}
+  );
+</script>
+
+<span class="pc" onmouseover="BS['_ViewTagsPopup3701'].stopHidingPopup();" onmouseout="BS['_ViewTagsPopup3701'].hidePopup();"
+><span class="pc__label"><span class="commentText">None</span></span><span class="pc__toggle-wrapper">&nbsp;<span id="tags:3701" onmouseover="BS['_ViewTagsPopup3701'].showPopupNearElement(this, 3701);" onclick="_tc_es(event)" class="toggle"></span></span></span>
+
+<div id="viewTagsPopup-3701" class="popupDiv">
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  There are no tags&nbsp;
+  
+
+
+</div>
+
+
+    </td>
+  
+    <td class="">
+      &nbsp;
+    </td>
+  
+    <td class=" pin nowrap" id="pinTd3237" 
+
+
+
+
+
+ >
+      
+          <span class="hidden">.</span>
+          
+    </td>
+  
+
+
+      </tr>
+    
+  </table>
+  <form id="pinBuildForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.PinBuildDialog.submit();" autocomplete="off">
+  <div id="pinBuildFormDialog" class="pinBuildFormDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.PinBuildDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="pinBuildFormTitle">Pin build</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <textarea name="pinComment" rows="5" cols="46" class="commentTextArea"
+            onfocus="if (this.value == this.defaultValue) this.value = ''" onblur="if (this.value == '') this.value='&lt;your comment here&gt;'">&lt;your comment here&gt;</textarea>
+  <input type="hidden" name="pin" value=""/>
+  <input type="hidden" name="buildId" value=""/>
+  <input type="hidden" name="onBuildPage" value="false"/>
+  
+    <input type="hidden" name="savePinnedBuild" value="true"/>
+  
+
+  
+
+
+<label class="textLabel" for="buildTagsInfo">Tags:</label><textarea style="resize: both; " class="expandable commentTextArea" name="buildTagsInfo" id="buildTagsInfoPinBuild"      ></textarea>
+<script type="text/javascript">
+  BS.VisibilityHandlers.attachTo('buildTagsInfoPinBuild', {
+    updateVisibility: function() {
+      var element = jQuery(BS.Util.escapeId('buildTagsInfoPinBuild'));
+      if (element.length) {
+        element.textAreaExpander(40, 200);
+      } else {
+        BS.VisibilityHandlers.detachFrom('buildTagsInfoPinBuild');
+      }
+    }
+  });
+</script>
+
+<div id="pinBuildForm_availableTags"></div>
+<span class="note"></span>
+
+  <div class="tagsApplyAll" style="display: none;">
+  
+  
+  
+    <input type="checkbox" 
+           name="applyToChainBuilds"
+           id="pin_applyToChainBuilds"
+           
+           
+           
+           
+           
+           
+           
+           
+           value="true">
+    <input type="hidden" name="_applyToChainBuilds" value="">
+  
+
+
+  <label for="pin_applyToChainBuilds">Apply tags to all builds that this build snapshot depends on</label>
+  <div class="grayNote">Note: existing tags in dependent builds will <i>not</i> be removed</div>
+</div>
+
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Pin" class="btn btn_primary submitButton " id="PinSubmitButton"    />
+
+    <a class="btn cancel" onclick="BS.PinBuildDialog.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <i id="saving" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+
+        
+
+        
+        
+      </div><!--##END:historyTableInner##-->
+</div>
+
+  
+  
+    <script type="text/javascript">
+      $('historyTable').refresh = BS.Refreshable.createRefreshFunction('historyTable', 'viewTypee7a6.html?buildTypeId=Dependencies_NVorbisRelease', '');
+    </script>
+  
+
+
+    </div>
+
+    
+      <div>
+        <h2>Permalinks</h2>
+
+        <span class="permalinks">
+          <img class="icon" src="http://guest:@localhost/img/buildStates/success_small.png"/>
+          <a href="http://guest:@localhost/viewLog.html?buildTypeId=Dependencies_NVorbisRelease&amp;buildId=lastSuccessful">Latest successful build</a>
+          <img class="icon" src="http://guest:@localhost/img/pinned.png"/>
+          <a href="http://guest:@localhost/viewLog.html?buildTypeId=Dependencies_NVorbisRelease&amp;buildId=lastPinned">Latest pinned build</a>
+          <i class="icon-asterisk orange"></i>
+          <a href="http://guest:@localhost/viewLog.html?buildTypeId=Dependencies_NVorbisRelease&amp;buildId=lastFinished">Latest finished build</a>
+        </span>
+      </div>
+    
+  </div>
+</div>
+
+<script type="text/javascript">
+  $j('.fading').each(function() {
+    BS.Highlight(this);
+  });
+  BS.Branch.injectBranchParamToLinks($j("#pendingChangesDiv, #showHistory"), "Dependencies");
+  $j(document).ready(function() {
+    BS.SystemProblems.setOptions({btId:'bt17'});
+    BS.SystemProblems.startUpdates();
+  });
+</script>
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.controllers.buildType.tabs.OverviewBuildTypeTab -->
+  
+
+    </div><!--##END:buildConfigurationContainerInner##-->
+</div>
+
+  
+  
+    <script type="text/javascript">
+      $('buildConfigurationContainer').refresh = BS.Refreshable.createRefreshFunction('buildConfigurationContainer', 'viewTypee7a6.html?buildTypeId=Dependencies_NVorbisRelease', '');
+    </script>
+  
+
+
+
+    
+
+
+
+
+
+
+
+<div id="valuePopup" class="valuePopup modalDialog">
+  <div id="valuePopupHeader" class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.BuildTypeSettingsPopup.closeMultilineValuePopup(); return false">&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="valuePopupTitle"></h3>
+    </div>
+  </div>
+
+  <div class="modalDialogBody">
+    <textarea id="valueContainer" rows="5" cols="40" readonly="true" wrap="off"></textarea>
+  </div>
+</div>
+
+
+    
+    <form id="resetSources" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.BuildTypeResetSources.submitResetSources();" autocomplete="off">
+  <div id="resetSourcesDialog" class="resetSourcesDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.BuildTypeResetSources.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="resetSourcesTitle">Enforce clean checkout on agents</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+      <div>Choose agents to enforce clean checkout
+    
+    
+  
+    
+    
+  <a id="" class="helpIcon" onclick="BS.Util.showHelp(event, 'http://confluence.jetbrains.com/display/TCD9/Clean+Checkout', {width: 0, height: 0}); return false" style="" href="http://confluence.jetbrains.com/display/TCD9/Clean+Checkout" title="View help" showdiscardchangesmessage="false"><img src="http://guest:@localhost/img/help.png" alt=""
+    
+  /></a> for:</div>
+      
+<div class="inplaceFilterDiv " style="width: 98%;">
+  <input type="text" id="resetSourcesAgentId_filter" value="" autocomplete="off"/>
+</div>
+<script type="text/javascript">
+  jQuery(function($) {
+    var input = $('#resetSourcesAgentId_filter');
+    input.placeholder({text: '&lt;filter agents>'});
+    input.inplaceFilter('resetSourcesAgentId');
+    BS.InPlaceFilter.prepareFilter('resetSourcesAgentId');
+    
+    input.trigger('focus');
+    
+  });
+</script>
+
+      <select id="resetSourcesAgentId" name="agentId" multiple="multiple" size="10" style="width: 98%;">
+        <option value="">&lt;All agents&gt;</option>
+      
+      </select>
+
+      <input type="hidden" name="resetBuildConfigurationSources" value="bt17"/>
+
+      <div class="popupSaveButtonsBlock">
+        
+
+
+
+
+
+<input type="submit" value="Clean sources" class="btn btn_primary submitButton " id="resetSourcesSubmitButton"    />
+
+        <a class="btn cancel" onclick="BS.BuildTypeResetSources.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+        <i id="resetSourcesProgress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+      </div>
+    
+  </div>
+</div></form>
+
+    
+      </div>
+    </div>
+
+    
+
+
+
+
+
+<div id="footer">
+  <div class="footerExtensions fixedWidth">
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.feedNotificator.extensions.FeedSubscribeLinkProvider$1: name:feed: /feed/feedSubscribeLink.html -->
+    
+
+<style type="text/css">
+  .feed-links {
+    margin-bottom: 0.3em;
+    padding-top: 1em;
+    padding-left: 0.35em;
+  }
+
+  .feed-links .icon-rss-sign {
+    color: #DF6722;
+  }
+</style>
+
+<div class="feed-links">
+  
+  
+    
+  
+  
+ <a style="text-decoration: none" href="http://buildserver/guestAuth/feed.html?buildTypeId=Dependencies_NVorbisRelease&amp;itemsType=builds&amp;userKey=guest" >
+   <i class="icon-rss-sign" ></i></a>
+ <a href="http://buildserver/guestAuth/feed.html?buildTypeId=Dependencies_NVorbisRelease&amp;itemsType=builds&amp;userKey=guest" >Subscribe</a>
+
+  to finished builds
+  
+</div>
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.feedNotificator.extensions.FeedSubscribeLinkProvider$1 -->
+  
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.usageStatistics.impl.GetRequestDetector: name:getRequestProcessor: /plugins/usage-statistics/empty.jsp -->
+    
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.usageStatistics.impl.GetRequestDetector -->
+  </div>
+
+  <div class="footerMainContainer">
+    <div class="footerMain fixedWidth clearfix">
+      <div class="column1">
+        <div class="columnContent">
+          <a class="helpLink" target="_blank" href="http://confluence.jetbrains.com/display/TCD9"> Help</a>
+          <a class="feedbackLink" target="_blank" href="http://www.jetbrains.com/teamcity/feedback?source=footer&amp;version=9.0.3%20(build%2032334)&amp;build=32334&amp;mode=ent">Feedback</a>
+        </div>
+      </div>
+
+      <div class="column2">
+        <div class="columnContent">
+          <a target="_blank" href="http://www.jetbrains.com/teamcity/?fromServer">TeamCity Enterprise</a><span class="greyNote"><span class="vWord">Version</span> 9.0.3 (build 32334)</span>, Open Source License
+
+          
+            <div>
+              <span class="newVersionLink">
+
+
+
+
+<a target="_blank" title="Download TeamCity 9.0.4 (build 32407)"
+     href="http://www.jetbrains.com/teamcity/download/index.html?fromServer">Get new version!</a>
+
+
+</span>
+            </div>
+          
+
+        </div>
+      </div>
+
+      <div class="column3">
+        <div class="columnContent">
+          <a onclick="BS.Util.popupWindow('showAgreement.html', 'agreement'); return false" href="#">License agreement</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function($) {
+    var mainContent = $('#mainContent'),
+        footer = $('#footer');
+
+    mainContent.css('padding-bottom', footer.height() + 'px');
+    footer.css('height', footer.height() + 'px');
+    footer.css('visibility', 'visible');
+  })(jQuery);
+</script>
+
+
+  </div>
+
+  <script type="text/javascript">(function() {var handler = function() {BS.ServerLink.onShutdown();};BS.EventTracker.subscribeOnEvent('H', 0, handler);})();</script>
+
+  
+
+
+
+
+<form id="muteTestsForm" action="#" method="post" onsubmit="return BS.BulkInvestigateDialog.submit();;" autocomplete="off">
+  <div id="muteTestsFormDialog" class="muteTestsFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.BulkInvestigateDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="muteTestsFormTitle">Mute test</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <div id="mute-dialog-container"></div>
+  <div><i id="mute-dialog-progress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i></div>
+
+  </div>
+</div></form>
+
+<form id="errorForm" action="#" method="post" onsubmit="return BS.ErrorDialog.close();;" autocomplete="off">
+  <div id="errorFormDialog" class="errorFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ErrorDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="errorFormTitle"></h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  </div>
+</div></form>
+
+<div id="shutdownDialog" class=" modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ServerUnavailableModalDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="shutdownDialogTitle">Server communication failure</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <strong id="shutdownDetails">Server is unavailable</strong>
+  <p id="onCommunicationFailure">Server stopped or communication with the server is not possible due to network failure.</p>
+  <p id="onServerShutdown">Server shutdown started.</p>
+  <p id="onAuthFailure">Please relogin to continue your work.</p>
+
+  </div>
+</div>
+
+
+<form id="runBuild" action="http://guest:@localhost/runCustomBuild.html" method="post" onsubmit="return BS.RunBuildDialog.submit();" autocomplete="off">
+  <div id="runBuildDialog" class="runBuildDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.RunBuildDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="runBuildTitle">Run Custom Build</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  </div>
+</div></form>
+
+<form id="stopBuildForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.StopBuildDialog.killBuild();;" autocomplete="off">
+  <div id="stopBuildFormDialog" class="stopBuildFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.StopBuildDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="stopBuildFormTitle">TODO</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <textarea id="removeQueuedBuildComment" name="comment" rows="3" cols="46" class="commentTextArea"
+            onfocus="if (this.value == this.defaultValue) this.value = ''" onblur="if (this.value == '') this.value='&lt;your comment here&gt;'">&lt;your comment here&gt;</textarea>
+  <input type="hidden" name="kill" value=""/>
+  <input type="hidden" name="operationKind" value="0"/>
+
+  <div id="moreToStop">
+    Loading related builds...
+    <i id="moreToStopLoader" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Loading related builds to stop..."></i>
+  </div>
+  <div id="moreToStopFragment" class="custom-scroll"></div>
+
+  <div id="moreToStopRetryNotice" class="attentionComment" style="display: none">The stop command has already been sent to the build. This will re-send stop command</div>
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Stop" class="btn btn_primary submitButton " id="submitRemoveQueuedBuild"  name="submit"  />
+
+    <a class="btn cancel" onclick="BS.StopBuildDialog.close(); return false" id="cancelRemoveQueuedBuild" >Cancel</a><script>BS.fixCancel();</script>
+    <i id="stopBuildIndicator" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+<form id="investigationForm" action="#" method="post" onsubmit="return BS.ResponsibilityDialog.submit();" autocomplete="off">
+  <div id="investigationFormDialog" class="investigationFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ResponsibilityDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="investigationFormTitle">Responsibility</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  </div>
+</div></form>
+
+
+
+<form id="editBuildTagsForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.Tags.submitTags();" autocomplete="off">
+  <div id="editBuildTagsFormDialog" class="editBuildTagsFormDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.Tags.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="editBuildTagsFormTitle">Edit tags</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  
+
+
+<textarea style="resize: both; " class="expandable commentTextArea" name="buildTagsInfo" id="buildTagsInfoEditTags"      ></textarea>
+<script type="text/javascript">
+  BS.VisibilityHandlers.attachTo('buildTagsInfoEditTags', {
+    updateVisibility: function() {
+      var element = jQuery(BS.Util.escapeId('buildTagsInfoEditTags'));
+      if (element.length) {
+        element.textAreaExpander(40, 200);
+      } else {
+        BS.VisibilityHandlers.detachFrom('buildTagsInfoEditTags');
+      }
+    }
+  });
+</script>
+
+<div id="editBuildTagsForm_availableTags"></div>
+<span class="note"></span>
+  <div class="tagsApplyAll" style="display: none;">
+  
+  
+  
+    <input type="checkbox" 
+           name="applyToChainBuilds"
+           id="tag_applyToChainBuilds"
+           
+           
+           
+           
+           
+           
+           
+           
+           value="true">
+    <input type="hidden" name="_applyToChainBuilds" value="">
+  
+
+
+  <label for="tag_applyToChainBuilds">Apply tags to all builds that this build snapshot depends on</label>
+  <div class="grayNote">Note: existing tags in dependent builds will <i>not</i> be removed</div>
+</div>
+
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Save" class="btn btn_primary submitButton "     />
+
+    <a class="btn cancel" onclick="BS.Tags.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <input type="hidden" value="" name="editTagsForPromotion"/>
+    <i id="savingTags" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+
+<form id="abstractLoading" action="#" method="post" onsubmit="return BS.LoadingDialog.close();" autocomplete="off">
+  <div id="abstractLoadingDialog" class="abstractLoadingDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.LoadingDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="abstractLoadingTitle">Loading...</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  <i id="abstractProgress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+
+  </div>
+</div></form>
+
+  </body>
+
+<!-- Mirrored from localhost/viewType.html?buildTypeId=Dependencies_NVorbisRelease by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2015 17:21:30 GMT -->
+</html>
+

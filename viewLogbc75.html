@@ -1,0 +1,1196 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  
+<!-- Mirrored from localhost/viewLog.html?buildId=10670&tab=artifacts&buildTypeId=Dependencies_AdamsLairWinFormsRelease&showAll=true by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2015 17:21:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Dependencies :: AdamsLair.WinForms.-Release &gt; #15 (11 Feb 15 19:53) &gt; Artifacts &mdash; TeamCity</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    
+<link rel="Shortcut Icon" href="favicond387.ico?v8" type="image/x-icon"/>
+
+<meta name="format-detection" content="telephone=no"/>
+
+<meta name="application-name" content="TeamCity (Dependencies :: AdamsLair.WinForms.-Release &amp;gt; #15 (11 Feb 15 19:53) &amp;gt; Artifacts &amp;mdash; TeamCity)"/>
+<meta name="description" content="Powerful Continuous Integration and Build Server"/>
+<meta name="viewport" content="width=1000">
+<link rel="icon" href="img/icons/TeamCity512d387.png?v8" sizes="512x512"/>
+<link rel="icon" href="img/icons/TeamCity128d387.png?v8" sizes="128x128"/>
+<link rel="icon" href="img/icons/TeamCity48d387.png?v8" sizes="48x48"/>
+<link rel="icon" href="img/icons/TeamCity32d387.png?v8" sizes="32x32"/>
+
+<link rel="icon" href="img/icons/TeamCity16d387.png?v8" sizes="16x16"/>
+
+    <!-- :linkCSS --><style type="text/css">
+  @import "res/-36551969708621551815a07.css?v=1434034307663";
+</style>
+
+
+    <!--[if IE 7]>
+    <style type="text/css">
+      @import /css/ie7.css;
+      @import /css/FontAwesome/css/font-awesome-ie7.min.css;
+    </style>
+<![endif]-->
+
+
+    <script type="text/javascript">
+  (function() {
+    var classNames = [];
+
+    /*@cc_on
+      classNames.push('ua-ie');
+      @if (@_jscript_version < 9) classNames.push('ua-ie8-below') @end
+    @*/
+
+    var ua = window.navigator.userAgent.toLowerCase();
+
+    if (ua.indexOf('mac') > -1) {
+      classNames.push('ua-mac');
+    } else if (ua.indexOf('windows') !== -1 && ua.indexOf('chrome') !== -1) {
+      classNames.push('ua-win-chrome');
+    }
+
+    document.documentElement.className = classNames.join(' ');
+  })();
+</script>
+    <script type="text/javascript">
+  var base_uri=window.location.protocol+"//"+window.location.host+"";
+</script>
+
+    
+
+    
+<!-- :linkCSS --><style type="text/css">
+  @import "res/23197217611532022425a07.css?v=1434034307663";
+</style>
+
+
+<!-- :linkScript --><script type="text/javascript" src="res/13186001004947130465a07.js?v=1434034307663"></script>
+
+
+<script type="text/javascript">
+  window.$j = jQuery.noConflict();
+</script>
+
+<!-- :linkScript --><script type="text/javascript" src="res/18560784067845212605a07.js?v=1434034307663"></script>
+
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/-47352584472883172375a07.js?v=1434034307663"></script>
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/-34740881818844512385a07.js?v=1434034307663"></script>
+
+
+    
+<script type="text/javascript">
+  var internalProps = [];
+
+  internalProps['teamcity.ui.pollInterval'] = 6;
+  internalProps['teamcity.ui.serverAvailability.pollInterval'] = 3;
+
+  internalProps['teamcity.ui.events.pollInterval'] = 6;
+  internalProps['teamcity.ui.systemProblems.pollInterval'] = 20;
+  internalProps['teamcity.ui.problemsSummary.pollInterval'] = 8;
+  internalProps['teamcity.ui.buildQueueEstimates.pollInterval'] = 10;
+
+  // Doesn't use BS.SubscriptionManager and standard subscription mechanism
+  internalProps['teamcity.ui.cleanupNotificatorProgress.pollInterval'] = 6;
+</script>
+
+
+    <!-- :linkScript --><script type="text/javascript" src="res/-42700968017468149075a07.js?v=1434034307663"></script>
+
+
+    
+<!-- :linkScript --><script type="text/javascript" src="res/20839995119179176525a07.js?v=1434034307663"></script>
+
+
+    
+
+<!-- :linkCSS --><style type="text/css">
+  @import "res/72849222456098178075a07.css?v=1434034307663";
+</style>
+
+<!-- :linkScript --><script type="text/javascript" src="res/-32884429132992613285a07.js?v=1434034307663"></script>
+
+
+    <script type="text/javascript">
+      BS.Socket.init(true);
+      BS.ServerLink.init('32334');
+
+      
+      BS.topNavPane = new TabbedPane('top');
+
+      BS.topNavPane.addTab("overview", {
+        caption: "Projects",
+        url: "/overview.html"
+      });
+
+      BS.topNavPane.addTab("changes", {
+        caption: "Changes",
+        url: "/changes.html"
+      });
+
+      BS.topNavPane.addTab("agents", {
+        caption: "Agents (2)",
+        url: "/agents.html"
+      });
+
+      
+      BS.topNavPane.addTab("queue", {
+        caption: "Build Queue (0)",
+        url: "/queue.html"
+      });
+      
+
+      (function() {
+        function initPage() {
+        
+          if (document.location.href.indexOf('#') == -1) {
+            restoreScrolling();
+          }
+        
+
+          if (typeof BS == "undefined") return;
+          BS.initReloadBlocker();
+        }
+
+        $j(document).ready(initPage);
+      })();
+
+      $j(document).ready(function() {
+        if (typeof BS == "undefined") return;
+        BS.StatisticsMonitor.start();
+        BS.InvestigationsCounterMonitor.start(-1000);
+        BS.EventTracker.startTracking("eventTracker.html");
+        BS.SubscriptionManager.checkNow();
+      });
+
+      Event.observe(window, "unload", function() {
+        rememberScrolling();
+        if (typeof BS == "undefined") return;
+        BS.blockRefreshPermanently();
+        BS.SubscriptionManager.dispose();
+      });
+    </script>
+  <!-- :linkCSS --><style type="text/css">
+  @import "http://guest:@localhost/res/-2110241620309785881.css?v=1434034307663";
+</style>
+
+  <!-- :linkScript --><script type="text/javascript" src="http://guest:@localhost/res/-505280207951373940.js?v=1434034307663"></script>
+
+
+  <!-- ===== JS files, provided by plugins: ==== -->
+  
+  
+  
+  <script type="text/javascript">
+    BS.Pin.noHover = true;BS.Navigation.items = [];BS.Navigation.items.push({title: "Dependencies",url: "project.html?projectId=Dependencies",selected: false,itemClass: "project",projectId: "Dependencies",siblingsTree: {parentId: "_Root"}});BS.Navigation.items.push({title: "AdamsLair.WinForms.-Release",url: "viewType.html?buildTypeId=Dependencies_AdamsLairWinFormsRelease",selected: false,itemClass: "buildType ",buildTypeId: "Dependencies_AdamsLairWinFormsRelease",siblingsTree: {parentId: "Dependencies"}});BS.Navigation.items.push({title: "<img src=\"\/img\/buildStates\/buildSuccessful.png\" id=\"\" class=\"icon buildDataIcon\" title=\'\' alt=\'\' \/><div id=\"dataHover_10670\" style=\"display: none;\">Build was successful&nbsp;(build agent: Server)<\/div>#15 (11 Feb 15 19:53)",url: "viewLog.html?buildTypeId=Dependencies_AdamsLairWinFormsRelease&buildId=10670",selected: true});var enablePeriodicalRefresh = _.once(function() {});$j(document).on("bs.navigationRendered", function() {BS.BuildResults.installBuildDetailsPopup(10670);});
+  </script>
+
+  
+  <!-- START EXTENSION CSS jetbrains.buildServer.serverSide.search.SearchController$1 name:searchBuildByNumber -->
+  <!-- :linkCSS --><style type="text/css">
+  @import "res/-39441135864799719265a07.css?v=1434034307663";
+</style>
+
+  <!-- END EXTENSION CSS jetbrains.buildServer.serverSide.search.SearchController$1 -->
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$1: name:searchBuildByNumber: /plugins/searchBuildByNumber/empty.jsp -->
+    
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$1 -->
+  
+  </head>
+
+  <body class="pageBG">
+
+  <div id="bodyWrapper">
+    <div class="ring-header"></div> <!-- Ring placeholder, do not remove -->
+    
+      <div id="loadingWarning">
+        LOADING...
+      </div>
+
+      <script type="text/javascript">
+        (function() {
+          function getLoadingDiv() {
+            return document.getElementById('loadingWarning');
+          }
+          var loadingTimeout = setTimeout(function(){
+            var div = getLoadingDiv();
+            if (div != null) {
+              div.style.display = 'block';
+            }
+          }, 500);
+
+          $j(document).ready(function() {
+            if (loadingTimeout) clearTimeout(loadingTimeout);
+            var div = getLoadingDiv();
+            if (div != null) {
+              BS.Util.hide(div);
+            }
+          });
+        })();
+      </script>
+    
+
+    <div id="topWrapper">
+      <div class="headBG clearfix">
+        <div class="fixedWidth">
+
+          
+          <a href="index.html" class="headerLogo"><i class="headerLogoImg" ></i></a>
+
+          <div id="tabsContainer"></div>
+          <div id="userPanel">
+            
+            <div class="info"><p><span class="investigationsTicker"></span>
+              
+              <span class="pc " id="sp_span_usernamePopup"><span class="pc__label">Guest user</span><span class="pc__toggle-wrapper">&nbsp;<span id="usernamePopup" class="toggle"></span></span></span><div id="sp_span_usernamePopupContent" class="popupDiv "><ul class="menuList"><li><a class="logout" href="#" onclick="BS.Logout('ajaxbfd1.html?logout=1'); return false" showdiscardchangesmessage="false">Log out</a></li></ul></div><script>BS.install_simple_popup('sp_span_usernamePopup', {shift: {x: -120, y: 15}, className: 'quickLinksMenuPopup'});</script>
+</div>
+            
+            
+          </div>
+        </div>
+        <div id="header-ready"></div>
+      </div>
+      <script type="text/javascript">
+        if (BS.topNavPane) {
+          BS.topNavPane.showIn('tabsContainer');
+          jQuery("#tabsContainer li").each(function() {
+            var self = jQuery(this);
+            if (!self.hasClass("first")) {
+              self.addClass("leftBorder")
+            }
+          });
+          BS.AllProjectsPopup.install();
+        }
+      </script>
+
+      <div class="fixedWidth clearfix">
+        <div class="quickLinks">
+          
+  
+  
+        </div>
+
+        
+        <ul id="mainNavigation"><li></li></ul>
+
+        <script type="text/javascript">
+            BS.Navigation.writeBreadcrumbs();
+        </script>
+      </div>
+    </div>
+
+    <div class="fixedWidth">
+      
+<a name="internalProjectIdUsedMessageKey"></a>
+<div class="messageNote" style='display: none; ' id="message_internalProjectIdUsedMessageKey">
+</div>
+
+      
+<a name="buildTypeExternalIdChanged"></a>
+<div class="messageNote" style='display: none; ' id="message_buildTypeExternalIdChanged">
+</div>
+
+
+      
+
+
+<!-- include PlaceId.BEFORE_CONTENT -->
+
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.controllers.CriticalErrorsPageExtension: name:__tc_criticalErrors: /pageBeforeContentCriticalErrors.jsp -->
+    
+
+
+
+
+
+
+<div id="globalHealthItems" class="refreshable">
+  <!--##BEGIN:globalHealthItemsInner##--><div id="globalHealthItemsInner" class="refreshableInner">
+  
+</div><!--##END:globalHealthItemsInner##-->
+</div>
+
+  
+  
+    <script type="text/javascript">
+      $('globalHealthItems').refresh = BS.Refreshable.createRefreshFunction('globalHealthItems', 'viewLogbc75.html?buildId=10670&amp;tab=artifacts&amp;buildTypeId=Dependencies_AdamsLairWinFormsRelease&amp;showAll=true', '');
+    </script>
+  
+
+
+
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.controllers.CriticalErrorsPageExtension -->
+  
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$2: name:searchBuildByNumber: /plugins/searchBuildByNumber/input.jsp -->
+    
+
+<div id="inputIdF" style="display: none;" data-btId="Dependencies_AdamsLairWinFormsRelease">
+  <input class="quickSearchQuery"
+       id="searchField"
+       value=""
+       type="text"
+       autocomplete="off"
+       />
+<a href="#" onclick="BS.Search.go(false);" class="quickSearchButton" title="Search"><i class="icon-search"></i></a>
+
+</div>
+
+<!-- :linkScript --><script type="text/javascript" src="res/14411460271034815295a07.js?v=1434034307663"></script>
+
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.serverSide.search.SearchController$2 -->
+  
+<!-- end of include PlaceId.BEFORE_CONTENT -->
+
+
+      
+      <table class="tabsTable">
+        <tr>
+          <td>
+            <div id="tabsContainer3" class="simpleTabs"></div>
+          </td>
+          <td class="besideContent">
+            
+    <span class="shortHistory">
+
+<table class="logPaging">
+  <tr>
+    <td>
+      
+        
+        <a class="resultsLink" href="http://guest:@localhost/viewLog.html?buildId=8583&amp;tab=artifacts&amp;buildTypeId=Dependencies_AdamsLairWinFormsRelease&amp;logTab=" title="Previous build || 22 Dec 14 11:36" ><strong>&laquo;</strong>
+        <img src="img/buildStates/buildSuccessful.png" id="" class="icon buildDataIcon"  title='' alt='' /><div id="dataHover_8583" style="display: none;">Previous build || 22 Dec 14 11:36&nbsp;(build agent: Server)</div> #14
+        </a>
+      
+      
+    </td>
+    <td style="padding: 0">
+      <div class="separator">&nbsp;</div>
+    </td>
+    <td>
+      <a href="http://guest:@localhost/viewType.html?buildTypeId=Dependencies_AdamsLairWinFormsRelease&amp;tab=buildTypeHistoryList">All history</a>
+    </td>
+    <td style="padding: 0">
+      <div class="separator">&nbsp;</div>
+    </td>
+    <td>
+      
+      
+        <p class="logPagingEmpty">Last recorded build</p>
+      
+    </td>
+  </tr>
+</table>
+
+
+</span>
+  
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="archivedProjectsContent" class="popupDiv" style="display:none;">
+    </div>
+
+    
+<div id="buildResultsSummaryTemplate" style="display:none">
+  <div class="summaryContainer">
+    <span id="detailedSummary:##BUILD_ID##">
+      <table cellspacing="0">
+      <tr>
+        <td>
+          <div class="header">Build shortcuts</div>
+          <ul class="bsLinks">
+            <li>
+              <a href="viewLog562c.html?tab=buildLog&amp;buildTypeId=##BUILD_TYPE_ID##&buildId=##BUILD_ID##"
+                     title="View log messages">Build log</a>
+              <span class="separator">|</span>
+              <a href="downloadBuildLog9875.html?buildId=##BUILD_ID##&archived=true" target="_blank"
+                      title="Download archived build log">.zip</a>
+            </li>
+            <li><a href="viewLog75a8.html?tab=buildParameters&amp;buildTypeId=##BUILD_TYPE_ID##&buildId=##BUILD_ID##"
+                   title="View parameters">Parameters</a></li>
+            <li><span id="summaryProgress:##BUILD_ID##" style="font-weight: normal; color:#888;"></span></li>
+          </ul>
+        </td>
+      </tr>
+      </table>
+    </span>
+  </div>
+</div>
+<div id="issueDetailsTemplate" style="display:none">
+  <span id="detailedSummary:##ISSUE_ID##_##PROJECT_ID##">
+    <i id="inProgress" style="" class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+  </span>
+</div>
+
+
+    <div id="mainContent" class="fixedWidth clearfix">
+      <div id="content">
+        
+<a name="accessDenied"></a>
+<div class="successMessage" style='display: none; ' id="message_accessDenied">
+</div>
+
+        
+  <div class="messagesHolder">
+    
+<a name="vcsLabelingSuccessful"></a>
+<div class="successMessage" style='display: none; ' id="message_vcsLabelingSuccessful">
+</div>
+
+    
+<a name="vcsLabelingFailed"></a>
+<div class="error" style='display: none; margin-left: 0' id="message_vcsLabelingFailed">
+</div>
+
+    
+<a name="vcsMergingSuccessful"></a>
+<div class="successMessage" style='display: none; ' id="message_vcsMergingSuccessful">
+</div>
+
+    
+<a name="vcsMergingFailed"></a>
+<div class="error" style='display: none; margin-left: 0' id="message_vcsMergingFailed">
+</div>
+
+  </div>
+
+  <div id="container" class="clearfix">
+    <div id="buildResults" class="refreshable">
+  <!--##BEGIN:buildResultsInner##--><div id="buildResultsInner" class="refreshableInner">
+    
+    
+      
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">(function() {var tabs = new TabbedPane("BUILD_RESULTS@TAB");// plugin buildResultsDiv:tabs.addTab('buildResultsDiv', {caption: 'Overview',url: 'viewLog.html?buildId=10670&buildTypeId=Dependencies_AdamsLairWinFormsRelease&tab=buildResultsDiv'});// plugin buildChangesDiv:tabs.addTab('buildChangesDiv', {caption: 'Changes',url: 'viewLog.html?buildId=10670&buildTypeId=Dependencies_AdamsLairWinFormsRelease&tab=buildChangesDiv'});// plugin buildLog:tabs.addTab('buildLog', {caption: 'Build Log',url: 'viewLog.html?buildId=10670&buildTypeId=Dependencies_AdamsLairWinFormsRelease&tab=buildLog'});// plugin artifacts:tabs.addTab('artifacts', {caption: 'Artifacts',url: 'viewLog.html?buildId=10670&buildTypeId=Dependencies_AdamsLairWinFormsRelease&tab=artifacts'});tabs.showIn('tabsContainer3');tabs.setActiveCaption('artifacts');// Example: "Users and Groups \u2014 TeamCity" -> "Users and Groups > Users \u2014 TeamCity"var tabTitle = '> Artifacts \u2014 TeamCity';if (document.title.indexOf(tabTitle) == -1) {document.title = document.title.replace(/\u2014 TeamCity$/, tabTitle);}})();</script>
+  
+        
+      
+  
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.controllers.artifacts.ArtifactsTab: name:artifacts: /artifacts/buildArtifacts.jsp -->
+    
+
+<div class="buildArtifacts">
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+
+
+
+<span id="downloadLinkSpan" style="display: none;"><a class="downloadLink" href="http://guest:@localhost/repository/downloadAll/Dependencies_AdamsLairWinFormsRelease/10670:id/artifacts.zip?showAll=true">Download all (.zip)</a></span>
+<div id="artifactsTree"></div>
+<div class="treeTotals">
+  Total size:
+  <span id="treeTotals">
+    <i>Computing...</i>
+  </span>
+
+  
+  <br/>
+  <span id="hiddenArtifactsNote" style="color: #888; display: none;">
+    
+      Hidden artifacts from the .teamcity directory are displayed. <a href="http://guest:@localhost/viewLog.html?buildId=10670&amp;tab=artifacts&amp;buildTypeId=Dependencies_AdamsLairWinFormsRelease&amp;showAll=false">Hide</a>
+    
+    
+  </span>
+</div>
+
+<script type="text/javascript">
+  BS.LazyTree.treeUrl = window['base_uri'] + "/buildArtifacts.html?buildId=10670&showAll=true";
+  BS.LazyTree.options = {
+    artifact: true,
+    buildId: 10670
+  };
+  BS.LazyTree.loadTree("artifactsTree");
+  var detailsUrl = window['base_uri'] + "/buildArtifactsDetails.html?buildId=10670&showAll=true";
+  BS.BuildArtifacts.updateDetails(detailsUrl, 'treeTotals', 'downloadLinkSpan', 'hiddenArtifactsNote');
+</script>
+
+    
+  
+</div>
+
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.controllers.artifacts.ArtifactsTab -->
+  
+
+    
+    
+    </div><!--##END:buildResultsInner##-->
+</div>
+
+  
+  
+    <script type="text/javascript">
+      $('buildResults').refresh = BS.Refreshable.createRefreshFunction('buildResults', 'viewLogbc75.html?buildId=10670&amp;tab=artifacts&amp;buildTypeId=Dependencies_AdamsLairWinFormsRelease&amp;showAll=true', '');
+    </script>
+  
+
+
+  </div>
+
+  
+
+
+
+
+
+
+
+<div id="valuePopup" class="valuePopup modalDialog">
+  <div id="valuePopupHeader" class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.BuildTypeSettingsPopup.closeMultilineValuePopup(); return false">&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="valuePopupTitle"></h3>
+    </div>
+  </div>
+
+  <div class="modalDialogBody">
+    <textarea id="valueContainer" rows="5" cols="40" readonly="true" wrap="off"></textarea>
+  </div>
+</div>
+
+
+  <form id="pinBuildForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.PinBuildDialog.submit();" autocomplete="off">
+  <div id="pinBuildFormDialog" class="pinBuildFormDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.PinBuildDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="pinBuildFormTitle">Pin build</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <textarea name="pinComment" rows="5" cols="46" class="commentTextArea"
+            onfocus="if (this.value == this.defaultValue) this.value = ''" onblur="if (this.value == '') this.value='&lt;your comment here&gt;'">&lt;your comment here&gt;</textarea>
+  <input type="hidden" name="pin" value=""/>
+  <input type="hidden" name="buildId" value=""/>
+  <input type="hidden" name="onBuildPage" value="true"/>
+  
+
+  
+
+
+<label class="textLabel" for="buildTagsInfo">Tags:</label><textarea style="resize: both; " class="expandable commentTextArea" name="buildTagsInfo" id="buildTagsInfoPinBuild"      ></textarea>
+<script type="text/javascript">
+  BS.VisibilityHandlers.attachTo('buildTagsInfoPinBuild', {
+    updateVisibility: function() {
+      var element = jQuery(BS.Util.escapeId('buildTagsInfoPinBuild'));
+      if (element.length) {
+        element.textAreaExpander(40, 200);
+      } else {
+        BS.VisibilityHandlers.detachFrom('buildTagsInfoPinBuild');
+      }
+    }
+  });
+</script>
+
+<div id="pinBuildForm_availableTags"></div>
+<span class="note"></span>
+
+  <div class="tagsApplyAll" style="display: none;">
+  
+  
+  
+    <input type="checkbox" 
+           name="applyToChainBuilds"
+           id="pin_applyToChainBuilds"
+           
+           
+           
+           
+           
+           
+           
+           
+           value="true">
+    <input type="hidden" name="_applyToChainBuilds" value="">
+  
+
+
+  <label for="pin_applyToChainBuilds">Apply tags to all builds that this build snapshot depends on</label>
+  <div class="grayNote">Note: existing tags in dependent builds will <i>not</i> be removed</div>
+</div>
+
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Pin" class="btn btn_primary submitButton " id="PinSubmitButton"    />
+
+    <a class="btn cancel" onclick="BS.PinBuildDialog.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <i id="saving" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+  
+
+
+
+
+
+
+<form id="buildCommentForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.BuildCommentDialog.submit();" autocomplete="off">
+  <div id="buildCommentFormDialog" class="buildCommentFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.BuildCommentDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="buildCommentFormTitle">Add build comment</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <textarea name="buildComment" rows="5" cols="46" class="commentTextArea"
+            onfocus="if (this.value == this.defaultValue) this.value = ''" onblur="if (this.value == '') this.value='&lt;your comment here&gt;'">&lt;your comment here&gt;</textarea>
+  <input type="hidden" name="promotionId" value=""/>
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Save comment" class="btn btn_primary submitButton " id="BuildCommentSubmitButton"    />
+
+    <a class="btn cancel" onclick="BS.BuildCommentDialog.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <i id="saving" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+  
+
+
+<form id="promoteBuild" action="#" method="post" onsubmit="return ;" autocomplete="off">
+  <div id="promoteBuildDialog" class="promoteBuildDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.PromoteBuildDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="promoteBuildTitle">Promote Build</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <i id="promoteBuildDialogContentProgress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+  <div id="promoteBuildDialogContent" class="promoteBuildContainer"></div>
+
+  </div>
+</div></form>
+
+  
+
+<form id="setLabelForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.Label.setLabel();" autocomplete="off">
+  <div id="setLabelFormDialog" class="setLabelFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.Label.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="setLabelFormTitle">Label this build in VCS</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  
+  <label for="labelName" class="labelName">Label:</label>
+  <input type="text" name="labelName" id="labelName"  maxlength="256" value="" class="textField" style="width: 25em;"       >
+
+
+  <div class="labelVcsRootsTitle">VCS roots:</div>
+
+  <ul class="vcsRootsToLabel">
+    
+      
+      <li>
+        
+  
+  
+    <input type="checkbox" 
+           name="labelingRootsManual[21]"
+           id="labelingRootsManual[21]"
+           
+           
+           
+           
+           
+           
+           
+           
+           value="true">
+    <input type="hidden" name="_labelingRootsManual[21]" value="">
+  
+
+
+        <label for="labelingRootsManual[21]">AdamsLair.WinForms on github</label>
+      </li>
+    
+  </ul>
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Set label" class="btn btn_primary submitButton "     />
+
+    <a class="btn cancel" onclick="BS.Label.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <input type="hidden" value="10670" name="setLabelForBuild"/>
+    <i id="setLabel" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+
+  </div>
+</div></form>
+
+  
+
+
+<style type="text/css">
+  .mergeSourcesFormDialog {
+    width: 50em;
+  }
+</style>
+
+<form id="mergeSourcesForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.Merge.merge();" autocomplete="off">
+  <div id="mergeSourcesFormDialog" class="mergeSourcesFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.Merge.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="mergeSourcesFormTitle">Merge this build sources</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  <div style="margin-bottom: 1em;">
+    <label for="dstBranch" style="margin-right: 1em; margin-left: 1em;">Merge into branch:</label>
+    <select name="dstBranch" id="dstBranch" style="" class="" tabindex=""     >
+      
+        
+<option value="refs/heads/master" data-title=""  >refs/heads/master</option>
+      
+    </select
+><script type="text/javascript">$j(document).ready(function() {
+  BS.jQueryDropdown($('dstBranch'), {});
+  $('dstBranch').setSelected = function(idx) { $('dstBranch').selectedIndex = idx; BS.jQueryDropdown($('dstBranch')).ufd("changeOptions"); };
+  $('dstBranch').setSelectValue = function(val) {
+    var idx = 0;
+    var selector = $('dstBranch');
+    for (var i=0; i<selector.options.length; i++) {
+      if (selector.options[i].value == val) {
+        idx = i;
+        break;
+      }
+    }
+
+    selector.setSelected(idx);
+  };
+});</script>
+    <span class="error" id="error_dstBranch" style="margin-left: 0;"></span>
+  </div>
+
+  <div style="margin-bottom: 1em; margin-left: 1em;">
+    <div><label for="message">Comment:<span class="mandatoryAsterix" title="Mandatory field">*</span></label></div>
+    <textarea style="resize: both; width: 46em;" class="expandable longField" name="message" id="message"      ></textarea>
+<script type="text/javascript">
+  BS.VisibilityHandlers.attachTo('message', {
+    updateVisibility: function() {
+      var element = jQuery(BS.Util.escapeId('message'));
+      if (element.length) {
+        element.textAreaExpander(100, 200);
+      } else {
+        BS.VisibilityHandlers.detachFrom('message');
+      }
+    }
+  });
+</script>
+
+    <span class="error" id="error_message" style="margin-left: 0;"></span>
+  </div>
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Merge" class="btn btn_primary submitButton "     />
+
+    <a class="btn cancel" onclick="BS.Merge.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <input type="hidden" value="10670" name="mergeSourcesForBuild"/>
+    <i id="mergingSources" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+
+  </div>
+</div></form>
+
+
+      </div>
+    </div>
+
+    
+
+
+
+
+
+<div id="footer">
+  <div class="footerExtensions fixedWidth">
+  <!-- START EXTENSION CONTENT jetbrains.buildServer.usageStatistics.impl.GetRequestDetector: name:getRequestProcessor: /plugins/usage-statistics/empty.jsp -->
+    
+  <!-- END EXTENSION CONTENT jetbrains.buildServer.usageStatistics.impl.GetRequestDetector -->
+  </div>
+
+  <div class="footerMainContainer">
+    <div class="footerMain fixedWidth clearfix">
+      <div class="column1">
+        <div class="columnContent">
+          <a class="helpLink" target="_blank" href="http://confluence.jetbrains.com/display/TCD9"> Help</a>
+          <a class="feedbackLink" target="_blank" href="http://www.jetbrains.com/teamcity/feedback?source=footer&amp;version=9.0.3%20(build%2032334)&amp;build=32334&amp;mode=ent">Feedback</a>
+        </div>
+      </div>
+
+      <div class="column2">
+        <div class="columnContent">
+          <a target="_blank" href="http://www.jetbrains.com/teamcity/?fromServer">TeamCity Enterprise</a><span class="greyNote"><span class="vWord">Version</span> 9.0.3 (build 32334)</span>, Open Source License
+
+          
+            <div>
+              <span class="newVersionLink">
+
+
+
+
+<a target="_blank" title="Download TeamCity 9.0.4 (build 32407)"
+     href="http://www.jetbrains.com/teamcity/download/index.html?fromServer">Get new version!</a>
+
+
+</span>
+            </div>
+          
+
+        </div>
+      </div>
+
+      <div class="column3">
+        <div class="columnContent">
+          <a onclick="BS.Util.popupWindow('showAgreement.html', 'agreement'); return false" href="#">License agreement</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function($) {
+    var mainContent = $('#mainContent'),
+        footer = $('#footer');
+
+    mainContent.css('padding-bottom', footer.height() + 'px');
+    footer.css('height', footer.height() + 'px');
+    footer.css('visibility', 'visible');
+  })(jQuery);
+</script>
+
+
+  </div>
+
+  <script type="text/javascript">(function() {var handler = function() {BS.ServerLink.onShutdown();};BS.EventTracker.subscribeOnEvent('H', 0, handler);})();</script>
+
+  
+
+
+
+
+<form id="muteTestsForm" action="#" method="post" onsubmit="return BS.BulkInvestigateDialog.submit();;" autocomplete="off">
+  <div id="muteTestsFormDialog" class="muteTestsFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.BulkInvestigateDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="muteTestsFormTitle">Mute test</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <div id="mute-dialog-container"></div>
+  <div><i id="mute-dialog-progress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i></div>
+
+  </div>
+</div></form>
+
+<form id="errorForm" action="#" method="post" onsubmit="return BS.ErrorDialog.close();;" autocomplete="off">
+  <div id="errorFormDialog" class="errorFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ErrorDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="errorFormTitle"></h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  </div>
+</div></form>
+
+<div id="shutdownDialog" class=" modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ServerUnavailableModalDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="shutdownDialogTitle">Server communication failure</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <strong id="shutdownDetails">Server is unavailable</strong>
+  <p id="onCommunicationFailure">Server stopped or communication with the server is not possible due to network failure.</p>
+  <p id="onServerShutdown">Server shutdown started.</p>
+  <p id="onAuthFailure">Please relogin to continue your work.</p>
+
+  </div>
+</div>
+
+
+<form id="runBuild" action="http://guest:@localhost/runCustomBuild.html" method="post" onsubmit="return BS.RunBuildDialog.submit();" autocomplete="off">
+  <div id="runBuildDialog" class="runBuildDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.RunBuildDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="runBuildTitle">Run Custom Build</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  </div>
+</div></form>
+
+<form id="stopBuildForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.StopBuildDialog.killBuild();;" autocomplete="off">
+  <div id="stopBuildFormDialog" class="stopBuildFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.StopBuildDialog.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="stopBuildFormTitle">TODO</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  <textarea id="removeQueuedBuildComment" name="comment" rows="3" cols="46" class="commentTextArea"
+            onfocus="if (this.value == this.defaultValue) this.value = ''" onblur="if (this.value == '') this.value='&lt;your comment here&gt;'">&lt;your comment here&gt;</textarea>
+  <input type="hidden" name="kill" value=""/>
+  <input type="hidden" name="operationKind" value="0"/>
+
+  <div id="moreToStop">
+    Loading related builds...
+    <i id="moreToStopLoader" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Loading related builds to stop..."></i>
+  </div>
+  <div id="moreToStopFragment" class="custom-scroll"></div>
+
+  <div id="moreToStopRetryNotice" class="attentionComment" style="display: none">The stop command has already been sent to the build. This will re-send stop command</div>
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Stop" class="btn btn_primary submitButton " id="submitRemoveQueuedBuild"  name="submit"  />
+
+    <a class="btn cancel" onclick="BS.StopBuildDialog.close(); return false" id="cancelRemoveQueuedBuild" >Cancel</a><script>BS.fixCancel();</script>
+    <i id="stopBuildIndicator" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+<form id="investigationForm" action="#" method="post" onsubmit="return BS.ResponsibilityDialog.submit();" autocomplete="off">
+  <div id="investigationFormDialog" class="investigationFormDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.ResponsibilityDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="investigationFormTitle">Responsibility</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  </div>
+</div></form>
+
+
+
+<form id="editBuildTagsForm" action="http://guest:@localhost/ajax.html" method="post" onsubmit="return BS.Tags.submitTags();" autocomplete="off">
+  <div id="editBuildTagsFormDialog" class="editBuildTagsFormDialog editTagsDialog modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.Tags.close(); return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="editBuildTagsFormTitle">Edit tags</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+  
+
+
+<textarea style="resize: both; " class="expandable commentTextArea" name="buildTagsInfo" id="buildTagsInfoEditTags"      ></textarea>
+<script type="text/javascript">
+  BS.VisibilityHandlers.attachTo('buildTagsInfoEditTags', {
+    updateVisibility: function() {
+      var element = jQuery(BS.Util.escapeId('buildTagsInfoEditTags'));
+      if (element.length) {
+        element.textAreaExpander(40, 200);
+      } else {
+        BS.VisibilityHandlers.detachFrom('buildTagsInfoEditTags');
+      }
+    }
+  });
+</script>
+
+<div id="editBuildTagsForm_availableTags"></div>
+<span class="note"></span>
+  <div class="tagsApplyAll" style="display: none;">
+  
+  
+  
+    <input type="checkbox" 
+           name="applyToChainBuilds"
+           id="tag_applyToChainBuilds"
+           
+           
+           
+           
+           
+           
+           
+           
+           value="true">
+    <input type="hidden" name="_applyToChainBuilds" value="">
+  
+
+
+  <label for="tag_applyToChainBuilds">Apply tags to all builds that this build snapshot depends on</label>
+  <div class="grayNote">Note: existing tags in dependent builds will <i>not</i> be removed</div>
+</div>
+
+
+  <div class="popupSaveButtonsBlock">
+    
+
+
+
+
+
+<input type="submit" value="Save" class="btn btn_primary submitButton "     />
+
+    <a class="btn cancel" onclick="BS.Tags.close(); return false"  >Cancel</a><script>BS.fixCancel();</script>
+    <input type="hidden" value="" name="editTagsForPromotion"/>
+    <i id="savingTags" style="display: none; " class="icon-refresh icon-spin progressRing progressRingDefault" title="Please wait..."></i>
+  </div>
+
+  </div>
+</div></form>
+
+
+<form id="abstractLoading" action="#" method="post" onsubmit="return BS.LoadingDialog.close();" autocomplete="off">
+  <div id="abstractLoadingDialog" class="abstractLoadingDialog  modalDialog">
+  <div class="dialogHeader">
+    <div class="closeWindow">
+      <a class="closeWindowLink" title="Close dialog window" href="#" onclick="BS.LoadingDialog.close();; return false" >&#xd7;</a>
+    </div>
+    <div class="dialogHandle">
+      <h3 class="dialogTitle" id="abstractLoadingTitle">Loading...</h3>
+    </div>
+  </div>
+  <div class="modalDialogBody">
+    
+
+  <i id="abstractProgress" style="display: none; " class="icon-refresh icon-spin progressRing progressRingInline" title="Please wait..."></i>
+
+  </div>
+</div></form>
+
+  </body>
+
+<!-- Mirrored from localhost/viewLog.html?buildId=10670&tab=artifacts&buildTypeId=Dependencies_AdamsLairWinFormsRelease&showAll=true by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2015 17:21:29 GMT -->
+</html>
+
