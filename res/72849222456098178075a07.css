@@ -1,0 +1,706 @@
+
+/*---
+/css/buildLog/buildLog.css
+---*/
+/*--------------------- styles for the message that shows in the All messages view */
+.log .ts,
+.log .time,
+.log .ts_in {
+  text-decoration: none;
+}
+
+.log .mark,
+.log .parent,
+.log .blockDescr {
+  font-style: normal;
+}
+
+/* Used by MessagesPrinter */
+.l0, .l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .l11, .l12, .l13, .l14, .l15, .l16, .l17, .l18, .l19, .l20, .l21, .l22, .l23, .l24, .l25, .lDeep {
+  white-space: pre;
+  color: #3f3f3f;
+}
+
+.buildResultsWrap .l0,
+.buildResultsWrap .l1,
+.buildResultsWrap .l2,
+.buildResultsWrap .l3,
+.buildResultsWrap .l4,
+.buildResultsWrap .l5,
+.buildResultsWrap .l6,
+.buildResultsWrap .l7,
+.buildResultsWrap .l8,
+.buildResultsWrap .l9,
+.buildResultsWrap .l10,
+.buildResultsWrap .l11,
+.buildResultsWrap .l12,
+.buildResultsWrap .l13,
+.buildResultsWrap .l14,
+.buildResultsWrap .l15,
+.buildResultsWrap .l16,
+.buildResultsWrap .l17,
+.buildResultsWrap .l18,
+.buildResultsWrap .l19,
+.buildResultsWrap .l20,
+.buildResultsWrap .l21,
+.buildResultsWrap .l22,
+.buildResultsWrap .l23,
+.buildResultsWrap .l24,
+.buildResultsWrap .l25,
+.buildResultsWrap .lDeep {
+  white-space: pre-wrap;
+}
+
+.multiline {
+  display: block;
+  white-space: pre;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+}
+
+.buildResultsWrap .stacktrace {
+  white-space: pre-wrap;
+}
+
+.l0 .ts,
+.l1 .ts {
+  padding-right: 20px;
+}
+
+.l1 .multiline {
+  margin-left: 90px;
+}
+
+.l2 .ts {
+  padding-right: 40px;
+}
+
+.l2 .multiline {
+  margin-left: 110px;
+}
+
+.l3 .ts {
+  padding-right: 60px;
+}
+
+.l3 .multiline {
+  margin-left: 130px;
+}
+
+.l4 .ts {
+  padding-right: 80px;
+}
+
+.l4 .multiline {
+  margin-left: 150px;
+}
+
+.l5 .ts {
+  padding-right: 100px;
+}
+
+.l5 .multiline {
+  margin-left: 170px;
+}
+
+.l6 .ts {
+  padding-right: 120px;
+}
+
+.l6 .multiline {
+  margin-left: 190px;
+}
+
+.l7 .ts {
+  padding-right: 140px;
+}
+
+.l7 .multiline {
+  margin-left: 210px;
+}
+
+.l8 .ts {
+  padding-right: 160px;
+}
+
+.l8 .multiline {
+  margin-left: 230px;
+}
+
+.l9 .ts {
+  padding-right: 180px;
+}
+
+.l9 .multiline {
+  margin-left: 250px;
+}
+
+.l10 .ts {
+  padding-right: 200px;
+}
+
+.l10 .multiline {
+  margin-left: 270px;
+}
+
+.l11 .ts {
+  padding-right: 220px;
+}
+
+.l11 .multiline {
+  margin-left: 290px;
+}
+
+.l12 .ts {
+  padding-right: 240px;
+}
+
+.l12 .multiline {
+  margin-left: 310px;
+}
+
+.l13 .ts {
+  padding-right: 260px;
+}
+
+.l13 .multiline {
+  margin-left: 330px;
+}
+
+.l14 .ts {
+  padding-right: 280px;
+}
+
+.l14 .multiline {
+  margin-left: 350px;
+}
+
+.l15 .ts {
+  padding-right: 300px;
+}
+
+.l15 .multiline {
+  margin-left: 370px;
+}
+
+.l16 .ts {
+  padding-right: 320px;
+}
+
+.l16 .multiline {
+  margin-left: 390px;
+}
+
+.l17 .ts {
+  padding-right: 340px;
+}
+
+.l17 .multiline {
+  margin-left: 410px;
+}
+
+.l18 .ts {
+  padding-right: 360px;
+}
+
+.l18 .multiline {
+  margin-left: 430px;
+}
+
+.l19 .ts {
+  padding-right: 380px;
+}
+
+.l19 .multiline {
+  margin-left: 450px;
+}
+
+.l20 .ts {
+  padding-right: 400px;
+}
+
+.l20 .multiline {
+  margin-left: 470px;
+}
+
+.l21 .ts {
+  padding-right: 420px;
+}
+
+.l21 .multiline {
+  margin-left: 490px;
+}
+
+.l22 .ts {
+  padding-right: 440px;
+}
+
+.l22 .multiline {
+  margin-left: 510px;
+}
+
+.l23 .ts {
+  padding-right: 460px;
+}
+
+.l23 .multiline {
+  margin-left: 530px;
+}
+
+.l24 .ts {
+  padding-right: 480px;
+}
+
+.l24 .multiline {
+  margin-left: 550px;
+}
+
+.l25 .ts,
+.lDeep .ts {
+  padding-right: 500px;
+}
+
+.l25 .multiline,
+.lDeep .multiline {
+  margin-left: 570px;
+}
+
+/* Used by MessagesPrinter */
+.time {
+  padding-left: 0.5em;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+  color: #888;
+}
+
+.progressMarkup {
+  color: silver;
+  background-color: #ffe4c4;
+}
+
+/*--------- general text styles --*/
+
+.log {
+  background-color: white;
+  margin-top: .5em;
+  font: 12px/1.4em Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+}
+
+.block {
+  margin: 0 0 0.5em 0;
+}
+
+.logReadingError {
+  color: red;
+  margin: 1em 0 0 0;
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+}
+
+/*Message statuses*/
+
+.log .internal_msg {
+  color: #888;
+}
+
+.log .status_err {
+  color: #ed2c10;
+}
+
+.log .status_warn {
+  color: #C47003;
+}
+/*---
+/css/buildProblems.css
+---*/
+
+.buildProblemsList {
+  width: 100%;
+}
+
+.investigation-dialog .buildProblemsList {
+  margin: 0;
+}
+
+.buildProblemsList .buildProblem {
+  padding: 4px 4px 4px 25px;
+  background: no-repeat 5px 5px;
+  white-space: nowrap;
+}
+
+.buildProblemsList .buildProblemBody {
+  white-space: nowrap;
+}
+
+.investigation-dialog .buildProblemsList .buildProblem {
+  padding: 0;
+}
+
+.buildProblemsList .problemDetailsContainer {
+  padding: 0 20px 10px 20px;
+}
+
+.buildProblemsList .problemDetails {
+  padding: 10px 0;
+}
+
+.buildProblemsList .problemDetails > .blockHeader {
+  background: none;
+  margin: 0;
+  padding: 4px 0 4px 0;
+}
+
+.buildProblemsList .longProblemDescription {
+  color: darkred;
+  white-space: pre;
+  padding-bottom: 10px;
+}
+
+.problemPopup .actions {
+  padding: 3px 0;
+}
+
+.buildProblemsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.buildProblemsTable td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px dotted #DEDEDE;
+  vertical-align: top;
+}
+
+.buildProblemsTable .muteScope {
+  padding-left: 1.5em;
+}
+
+.buildProblemsTable .responsibilityActions {
+  width: 15em;
+  text-align: right;
+}
+
+.buildProblemsList ul.compiler-errors {
+  list-style: none;
+}
+
+.buildProblemsList .compiler-errors {
+  margin: 0;
+  padding: 0;
+}
+
+.buildProblemsList .compiler-error {
+  font: 12px Menlo, "Bitstream Vera Sans Mono", "Ubuntu Mono", "Courier New", Courier, monospace;
+  white-space: normal;
+  color: #ed2c10;
+}
+
+.buildProblemsList .compiler-errors-actions {
+  float: right;
+}
+
+.buildProblemsList .groupHeader {
+  padding: 2px 0 2px 27px;
+  background: no-repeat 5px 3px;
+}
+
+.buildProblemsList .groupHeader .problemCount {
+  color: #888;
+  font-weight: normal;
+}
+
+.buildProblemsList .buildProblem.blockExpanded {
+  background-color: #f5f5f5;
+}
+
+.buildProblemsList .buildProblem.blockExpanded .problemDescription{
+  font-weight: bold;
+}
+
+.buildProblemsList .blockExpanded {
+  background-image: url(http://guest:@localhost/img/handle/blockExpanded.png);
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+
+.buildProblemsList .blockCollapsed {
+  background-image: url(http://guest:@localhost/img/handle/blockCollapsed.png);
+  background-size: 16px 16px;
+  cursor: pointer;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 200 / 100), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .buildProblemsList .blockExpanded {
+    background-image: url(http://guest:@localhost/img/handle/blockExpanded@2x.png);
+  }
+
+  .buildProblemsList .blockCollapsed {
+    background-image: url(http://guest:@localhost/img/handle/blockCollapsed@2x.png);
+  }  
+}
+
+.buildProblemsList .group {
+  padding-left: 22px;
+}
+
+.buildProblemsList .problemType {
+  font-weight: bold;
+}
+
+.buildProblemsList .problemBuildType,
+.buildProblemsList .problemProject {
+  padding: 2px 0 2px 20px;
+  background: no-repeat 0 3px;
+  background-size: 16px 16px;
+  font-weight: bold;
+}
+
+.buildProblemsList .problemBuildType {
+  background-image: url(http://guest:@localhost/img/buildType.png);
+}
+
+.buildProblemsList .problemProject {
+  background-image: url(http://guest:@localhost/img/project.png);
+}
+
+.buildProblemsList .muteDetails {
+  text-align: right;
+}
+
+.buildProblemsList .muteDetails {
+  text-align: right;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 200 / 100), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .buildProblemsList .problemBuildType {
+    background-image: url(http://guest:@localhost/img/buildType@2x.png);
+  }
+
+  .buildProblemsList .problemProject {
+    background-image: url(http://guest:@localhost/img/project@2x.png);
+  }
+}
+
+.buildProblemsList .expandCollapseActions {
+  padding: 5px;
+  margin-bottom: 3px;
+  background-color: #F5F5F5;
+}
+
+.buildProblemsList .problemToHighlight.highlighted,
+.buildProblemsList .problemToHighlight.stickyHighlighted  {
+  background-color: #FFC;
+}
+
+.buildProblemsList .problemToHighlight.highlighted .testFailedInPart,
+.buildProblemsList .problemToHighlight.stickyHighlighted .testFailedInPart, {
+  color: #3F3F3F;
+}
+
+.buildProblemsList .problemToHighlight.highlighted .testFailedInPart a,
+.buildProblemsList .problemToHighlight.stickyHighlighted .testFailedInPart a {
+  color: #1564c2;
+}
+
+/*---
+/css/viewModification.css
+---*/
+table.modificationBuilds {
+  width: 99%;
+  border-collapse: collapse;
+  margin-left: 0.5em;
+  table-layout: auto;
+}
+
+table.modificationBuilds tr td {
+  border-bottom: none;
+}
+
+table.modificationBuilds tr td.name {
+  white-space: wrap;
+  min-width: 150px;
+  max-width: 30%;
+}
+
+table.modificationBuilds tr td.buildNumber {
+  white-space: nowrap;
+}
+
+table.modificationBuilds tr td.estimate {
+  white-space: wrap;
+  padding-left: 0.5em;
+}
+
+table.modificationBuilds tr td.status {
+  white-space: wrap;
+  min-width: 150px;
+}
+
+table.modificationBuilds tr td.buildPrefix {
+  white-space: nowrap;
+  width: 8em;
+  text-align: right;
+}
+
+table.modificationBuilds tr td.startDate {
+  white-space: nowrap;
+  text-align: right;
+  max-width: 7em;
+}
+
+table.modificationBuilds tr td.changesLink {
+  text-align: right;
+}
+
+table.modificationBuilds tr td.buildTypeName {
+  min-width: 200px;
+  max-width: 200px;
+}
+
+table.modificationBuilds tr.buildTypeProblem {
+  padding-left: .5em;
+  border-bottom: #dbdbdb 1px solid;
+  line-height: 2em;
+  vertical-align: top;
+}
+
+table.modificationBuilds tr.nosplit{
+  border-bottom: none !important;
+}
+
+table.modificationBuilds tr.nosplit td.name{
+  border-bottom: #dbdbdb 1px solid;
+}
+table.modificationBuilds tr td{
+  vertical-align: top;
+}
+.modificationBuilds .buildTypeProblem div.rightright {
+  float: right;
+  text-align: right;
+}
+
+.modificationBuilds .buildTypeProblem div.right span.date {
+  display: inline-block;
+  width: 8em;
+  margin-left: 2em;
+}
+
+.modificationBuilds .buildTypeProblem div.right span.highlightChanges {
+  left: 0;
+}
+
+.modificationBuilds .respCell {
+  max-width: 1px;
+  padding: 5px 5px;
+}
+
+.modificationBuilds .problemCell {
+  width: 75%;
+}
+
+.modificationBuilds.hasBranches .branch {
+  display: inline-block;
+  padding-right: 0.5em;
+}
+
+table.statusTable {
+  margin-bottom: 10px;
+}
+
+.statusTable td {
+  padding-bottom: .75em;
+  padding-left: .5em;
+  vertical-align: top;
+}
+
+.statusTable .changeComment {
+  font-weight: bold;
+}
+
+.statusTable .caption {
+  width: 6%;
+  white-space: nowrap;
+}
+
+.statusTable .caption.right {
+  padding-right: .5em;
+  text-align: right;
+}
+
+.statusTable .progress {
+  background-color: #f3f3f3;
+  border: 1px solid #f9f9f9 ;
+}
+
+tr.header td {
+  vertical-align: top;
+}
+
+tr.header td div {
+  background-color: #f5f5f5;
+  padding: 0 .5em .2em .5em;
+  line-height: 2.2em;
+}
+
+tr.header td.first div {
+  width: 90%;
+}
+
+#helperSection {
+  float: right;
+  position: relative;
+  top: -1px;
+  padding: .3em 10px;
+}
+
+.changeHeader {
+  display: none;
+}
+
+#helperSection .changeHeader {
+  display: block;
+}
+
+/* TW-11046. See also myChanges.css */
+div.vcsModificationTabContainer .new {
+  background-image: none;
+  margin-left: 5px;
+  font-weight: normal;
+}
+
+td.pendingRow {
+  padding: 3px;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+.newTestsInfo,
+.noNewTests {
+  clear: both;
+  margin: 10px 10px 0;
+}
+
+div.vcsModificationTabContainer .vcsModificationFilesList {
+  max-width: 85%;
+}
+
+div.vcsModificationTabContainer .vcsModificationFilesList table.changedFiles td.fileTD {
+  white-space: normal;
+}
+
+/* Style for highlighting the current root if modification was detected in several roots */
+span.currentVcsRoot {
+  font-weight: bold;
+}
+
+p#oldTests {
+  margin-top: .5em;
+}
+
+.hideSuccessfulBlock {
+  margin: 10px 10px 0;
+}
+.hiddenImage{
+  visibility: hidden;
+}
+.label{
+  color: #808080;
+}
+
